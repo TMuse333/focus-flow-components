@@ -1,0 +1,8 @@
+node_modules
+src
+*.log
+.git
+.gitignore
+rollup.config.js
+tailwind.config.js
+tsconfig.json

@@ -77,11 +77,16 @@ isMobile
         >
           <span className="">{title}</span>
           <span>
-            {/* {isSelected ? (
-              <ChevronUp />
+            {isSelected ? (
+                <>
+                up
+                </>
+          
             ) : (
-              <ChevronDown />
-            )} */}
+          <>
+          down
+          </>
+            )}
           </span>
         </button>
         <div

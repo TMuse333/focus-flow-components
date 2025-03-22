@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+// import { ChevronDown, ChevronUp } from "lucide-react";
 
 import {motion, useInView} from 'framer-motion'
 
@@ -77,11 +77,11 @@ isMobile
         >
           <span className="">{title}</span>
           <span>
-            {isSelected ? (
+            {/* {isSelected ? (
               <ChevronUp />
             ) : (
               <ChevronDown />
-            )}
+            )} */}
           </span>
         </button>
         <div

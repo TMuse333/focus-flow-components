@@ -7,7 +7,7 @@ import {motion, useInView} from 'framer-motion'
 
 
 
-export interface ContentProps {
+export interface ImageTextBoxProps {
   src: string;
   alt: string;
   description: string;
@@ -15,26 +15,27 @@ export interface ContentProps {
   title: string;
   buttonLink?: string;
   buttonText?: string;
-  bgColor?:boolean;
+  bgColor?:string;
   customImage?: React.ReactNode
   objectContain?:boolean,
   isMobile:boolean
 
 }
 
-const ImageTextBox: React.FC<ContentProps> = ({
-  src,
-  alt,
-  description,
-  reverse = false,
-  title,
-  buttonLink,
-  buttonText = "Learn More",
-  bgColor,
-  customImage,
-  objectContain,
-  isMobile
-}) => {
+const ImageTextBox = ({
+    src,
+    alt,
+    description,
+    reverse = false,
+    title,
+    buttonLink,
+    buttonText,
+    bgColor,
+    customImage,
+    objectContain,
+    isMobile,
+  }: ImageTextBoxProps): React.JSX.Element => {
+  
 
 
 const headerRef = useRef(null)
@@ -101,7 +102,7 @@ const imageFadeIn = (delay:number) => {
       className={`overflow-x-hidden flex flex-col justify-center items-center pt-8 pb-8 relative mx-auto max-w-[1200px] ${
         reverse ? "md:flex-row-reverse" : "md:flex-row"
 
-      } ${bgColor ? `bg-[#4D8890]` : ''}
+      } ${bgColor ? `${bgColor}` : ''}
       `}
     >
      

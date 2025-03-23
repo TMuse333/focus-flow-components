@@ -144,16 +144,16 @@ const ExperienceCard = ({
           alt={alt}
           width={600}
           height={1300}
-          className={`w-[80vw] opacity-0 mx-auto mb-4 sm:w-[40vw] max-w-[500px] rounded-2xl max-h-[600px] ${
+          className={`w-[80vw] opacity-0 mx-auto mb-4 sm:w-[40vw] max-w-[500px] rounded-2xl max-h-[400px] ${
             objectContain ? "object-contain" : "object-cover"
           }`}
-          sizes="(max-width: 768px) 80vw, (max-width: 1024px) 40vw, 500px"
-          priority={true}
+        //   sizes="(max-width: 768px) 80vw, (max-width: 1024px) 40vw, 500px"
+        //   priority={true}
         />
         <p
           ref={descriptionRef}
           id={`${title}-description`}
-          className="px-4 font-semibold opacity-0 my-auto md:w-[50%] md:text-lg whitespace-pre-line"
+          className="px-4 font-semibold opacity-0 my-auto md:w-[40vw] md:text-lg whitespace-pre-line"
         >
           {description}
           <br />

@@ -20,15 +20,9 @@ export default [
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss({
         extensions: [".css"],
-        minimize: true,
         inject: true,
         extract: "index.css",
-        plugins: [
-          tailwindcss(tailwindConfig), // Pass config explicitly
-          autoprefixer(),
-        ],
-        sourceMap: true,
-      })
+      }),
     ],
     external: ["react", "react-dom", "next/image", "next/link", "framer-motion"]
   },

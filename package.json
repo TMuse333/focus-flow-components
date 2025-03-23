@@ -13,9 +13,9 @@
   ],
   "type": "module",
   "scripts": {
-    "build": "rollup -c",
-    "prepublishOnly": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "npx @tailwindcss/cli -i src/index.css -o dist/index.css --config tailwind.config.cjs",
+    "build:rollup": "rollup -c",
+    "build": "npm run build:css && npm run build:rollup"
   },
   "keywords": [
     "react",

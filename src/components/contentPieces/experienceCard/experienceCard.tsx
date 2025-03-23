@@ -132,7 +132,8 @@ const ExperienceCard = ({
       <h2
         ref={headerRef}
         id={`${title}-header`}
-        className="text-center w-full text-3xl sm:text-4xl mb-6 font-bold pt-4 px-3 opacity-0"
+        className="text-center w-full text-3xl sm:text-4xl mb-6 font-bold pt-4 px-3 opacity-0
+        md:text-black"
       >
         {title}
       </h2>

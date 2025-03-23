@@ -7,5 +7,8 @@ export {default as ImageAspects} from './components/textComponents/imageAspects/
 export {default as TextAndList} from './components/textComponents/textAndList/textAndList'
 export type { TextAndListProps } from "./components/textComponents/textAndList/textAndList";
 
-import {default as CountUpImageTextBox} from './components/contentPieces/countUpImageText/countUpImageText'
+export  {default as CountUpImageTextBox} from './components/contentPieces/countUpImageText/countUpImageText'
 export type {CountUpImageTextProps} from './components/contentPieces/countUpImageText/countUpImageText'
+
+export {default as ParallaxText} from './components/contentPieces/parallaxText/parallaxText'
+export type {ParallaxTextProps}from './components/contentPieces/parallaxText/parallaxText'

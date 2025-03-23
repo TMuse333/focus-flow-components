@@ -199,13 +199,10 @@ const ImageAspects = ({
     return (
         <>
 
-<section className="w-screen bg-gray-400">
-    <h2 className="text-4xl text-blue-600">
-        the component works properly?? </h2>
-</section>
+        
 
 
-        {/* <section ref={componentRef}
+        <section ref={componentRef}
          className={`flex
          justify-center flex-col items-center
           sm:grid sm:grid-cols-2 xl:grid-cols-3
@@ -229,7 +226,7 @@ const ImageAspects = ({
 
             ))}
             
-        </section> */}
+        </section>
       
        </>
     )

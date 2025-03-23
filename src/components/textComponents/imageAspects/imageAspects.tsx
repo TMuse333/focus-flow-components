@@ -176,8 +176,7 @@ export interface ImageAspectProps {
 }
 const ImageAspects = ({
     images,
-    title,
-    description,
+ 
     bgColor,
   }: ImageAspectProps): React.JSX.Element => {
   
@@ -200,58 +199,13 @@ const ImageAspects = ({
     return (
         <>
 
-        
-
-          {/* <div 
-           className="mt-5
-        w-[90vw] h-[5px]
-         bg-gradient-to-r from-[#003647] via-[#3e7384] to-[#003647]
-        ml-auto mr-auto rounded-[200rem]
-        mb-8
-        ">
-           
-       </div> */}
-
-       <div className={``}
-       ref={componentRef}>
-       {title && (
-            <>
-             <motion.h2
-             initial={{
-               opacity:0,
-               y:50
-             }} 
-             animate={{
-               opacity:inView ? 1 : 0,
-               y: inView ? 0 : 50
-             }}
-             className='relative text-2xl font-cursive
-             text-black 
-            text-4xl sm:text-5xl font-semibold text-center'>
-                {title}
-            </motion.h2>
-              <motion.p
-            initial={{
-              opacity:0,
-              x:50
-            }} 
-            animate={{
-              opacity:inView ? 1 : 0,
-              x: inView ? 0 : 50,
-              transition:{
-                delay:0.5
-              }
-            }}
-             className='text-left relative z-[20]  md:text-center md:text-2xl pl-4 pr-5 mt-[2rem]
-             mb-[2rem] text-black
-           w-[100%] max-w-[900px] ml-auto mr-auto'>
-            {description}</motion.p>
-            </>
-        )}
-       </div>
+<section className="w-screen bg-gray-400">
+    <h2 className="text-4xl text-blue-600">
+        the component works properly?? </h2>
+</section>
 
 
-        <section ref={componentRef}
+        {/* <section ref={componentRef}
          className={`flex
          justify-center flex-col items-center
           sm:grid sm:grid-cols-2 xl:grid-cols-3
@@ -275,7 +229,7 @@ const ImageAspects = ({
 
             ))}
             
-        </section>
+        </section> */}
       
        </>
     )

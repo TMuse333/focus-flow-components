@@ -8,7 +8,7 @@ import AppearingGradient from '../../textAnimations/appearingGradient/appearingG
 
 
 
-interface VerticalImageTextBoxProps {
+export interface VerticalImageTextBoxProps {
     title: string;
     description: string;
     logo?: string;

@@ -18,3 +18,6 @@ export type { TestimonialProps} from './components/textComponents/testimonials/t
 
 export {default as AppearingGradient} from './components/textAnimations/appearingGradient/appearingGradient'
 export type {AppearingGradientProps} from './components/textAnimations/appearingGradient/appearingGradient'
+
+export {default as VerticalImageTextBox} from './components/contentPieces/verticalImageTextBox/verticalImageTextBox'
+export type {VerticalImageTextBoxProps} from './components/contentPieces/verticalImageTextBox/verticalImageTextBox'

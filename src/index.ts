@@ -12,3 +12,9 @@ export type {CountUpImageTextProps} from './components/contentPieces/countUpImag
 
 export {default as ParallaxText} from './components/contentPieces/parallaxText/parallaxText'
 export type {ParallaxTextProps}from './components/contentPieces/parallaxText/parallaxText'
+
+export {default as Testimonials} from './components/textComponents/testimonials/testimonials'
+export type { TestimonialProps} from './components/textComponents/testimonials/testimonials'
+
+export {default as AppearingGradient} from './components/textAnimations/appearingGradient/appearingGradient'
+export type {AppearingGradientProps} from './components/textAnimations/appearingGradient/appearingGradient'

@@ -23,7 +23,7 @@ export interface VerticalImageTextBoxProps {
   }
   
 
-  const VerticalImageTextBox: React.FC<VerticalImageTextBoxProps> = ({
+  const VerticalImageTextBox = ({
     title,
     description,
     button,
@@ -34,7 +34,7 @@ export interface VerticalImageTextBoxProps {
     mainGradientColor,
     darkGradientColor,
     brightGradientColor
-}): React.JSX.Element => {
+}: VerticalImageTextBoxProps): React.JSX.Element => {
     const [scope, scopeAnimate] = useAnimate();
   
     const COLORS = [

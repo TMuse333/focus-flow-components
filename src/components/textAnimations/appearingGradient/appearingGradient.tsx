@@ -12,9 +12,16 @@ export interface AppearingGradientProps {
     isMobile: boolean;
 }
 
-const AppearingGradient: React.FC<AppearingGradientProps> = ({
-    text, subText, description, noBottom, mainColor, brightColor, darkColor, isMobile
-}): React.JSX.Element => {
+const AppearingGradient = ({
+    text,
+    subText,
+    description,
+    noBottom,
+    mainColor,
+    brightColor,
+    darkColor,
+    isMobile
+}: AppearingGradientProps): React.JSX.Element => {
     const [scope, animate] = useAnimate();
     const [lineComplete, setLineComplete] = useState(false);
     const [startSpring, setStartSpring] = useState(false);

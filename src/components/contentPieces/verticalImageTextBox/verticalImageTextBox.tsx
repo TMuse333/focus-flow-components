@@ -16,7 +16,10 @@ export interface VerticalImageTextBoxProps {
     isMobile: boolean;
     subTitle?:string
     button?: React.ReactNode,
-    gradientColor:string
+    mainGradientColor:string,
+    darkGradientColor:string,
+    brightGradientColor:string
+
   }
   
 
@@ -25,7 +28,10 @@ const VerticalImageTextBox:React.FC<VerticalImageTextBoxProps> = ({
    button,
   subTitle,
     logo,bgImage,isMobile,
-    gradientColor
+    mainGradientColor,
+    darkGradientColor,
+    brightGradientColor
+    
   }) => {
     const [scope, scopeAnimate] = useAnimate();
   
@@ -150,8 +156,11 @@ const VerticalImageTextBox:React.FC<VerticalImageTextBoxProps> = ({
           text={title}
           subText={subTitle ? subTitle : ""}
           noBottom
-         color={gradientColor}
+         mainColor={mainGradientColor}
           isMobile={isMobile}
+          darkColor={darkGradientColor}
+          brightColor={brightGradientColor}
+
           />
 
         

@@ -21,3 +21,15 @@ export type {AppearingGradientProps} from './components/textAnimations/appearing
 
 export {default as VerticalImageTextBox} from './components/contentPieces/verticalImageTextBox/verticalImageTextBox'
 export type {VerticalImageTextBoxProps} from './components/contentPieces/verticalImageTextBox/verticalImageTextBox'
+
+export {default as ThreeBoxHero} from './components/herobanners/threeBoxHero/threeBoxHero'
+export type {ThreeBoxHeroProps} from './components/herobanners/threeBoxHero/threeBoxHero'
+
+export {default as FadeInFromLeftText} from './components/textAnimations/fadeInFromLeftText/fadeInFromLeftText'
+export type {FadeInFromLeftTextProps} from './components/textAnimations/fadeInFromLeftText/fadeInFromLeftText'
+
+export {default as TypeAlongText} from './components/textAnimations/typeAlongText/typeAlongText'
+export type { TypeAlongTextProps} from './components/textAnimations/typeAlongText/typeAlongText'
+
+export {default as TypeWriter} from './components/textAnimations/typeWriter/typeWriter'
+export type { TypeWriterProps} from './components/textAnimations/typeWriter/typeWriter'

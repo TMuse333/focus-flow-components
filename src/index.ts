@@ -33,3 +33,6 @@ export type { TypeAlongTextProps} from './components/textAnimations/typeAlongTex
 
 export {default as TypeWriter} from './components/textAnimations/typeWriter/typeWriter'
 export type { TypeWriterProps} from './components/textAnimations/typeWriter/typeWriter'
+
+export {default as FullBodyHero} from './components/herobanners/fullBodyHero/fullBodyHero'
+export type {FullBodyHeroProps} from './components/herobanners/fullBodyHero/fullBodyHero'

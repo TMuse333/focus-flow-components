@@ -8,6 +8,8 @@ interface DiagonalClipContainerProps {
   
   const DiagonalClipContainer = ({ mainColor }: DiagonalClipContainerProps): React.JSX.Element => {
   const colors = useGenerateColorShades(mainColor); // Get the generated colors based on the main color
+
+  console.log('colors generated',colors)
   
   const color = useMotionValue(colors[0]); // Use the first generated color for the animation
 

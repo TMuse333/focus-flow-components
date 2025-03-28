@@ -23,8 +23,7 @@ export interface FullBodyHeroProps {
     typeWriterExamples?:string[]
   }
   
-  const FullBodyHero: React.FC<FullBodyHeroProps> = ({
-    
+  const FullBodyHero = ({
     bgImage,
     logoImage,
     fullBodyImage,
@@ -38,7 +37,7 @@ export interface FullBodyHeroProps {
     fullBodyStyles = "",
     logoStyles = "",
     typeWriterExamples
-  }) => {
+  }: FullBodyHeroProps): React.JSX.Element => {
     const [startTypeAlong, setStartTypeAlong] = useState(false);
     const [startImage, setStartImage] = useState(false);
     const [startFadeIn, setStartFadeIn] = useState(false);

@@ -37,5 +37,5 @@ export type { TypeWriterProps} from './components/textAnimations/typeWriter/type
 export {default as FullBodyHero} from './components/herobanners/fullBodyHero/fullBodyHero'
 export type {FullBodyHeroProps} from './components/herobanners/fullBodyHero/fullBodyHero'
 
-export { default as CarouselHero } from './components/herobanners/carouselHero/carouselHero'
-export type { CarouselHeroProps } from './components/herobanners/carouselHero/carouselHero'
+export {default as CarouselHero} from './components/herobanners/carouselHero/carouselHero';
+export type { CarouselHeroProps } from './components/herobanners/carouselHero/carouselHero'; // Correctly exporting the props type

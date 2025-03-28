@@ -10,7 +10,7 @@ interface CarouselData {
   description: string;
 }
 
-interface CarouselHeroProps {
+export interface CarouselHeroProps {
   mainHeader: string;
   titleText: string;
   descriptionText: string;

@@ -21,6 +21,7 @@ export interface FullBodyHeroProps {
     fullBodyStyles?: string; // Optional additional class names for full body image
     logoStyles?: string;    // Optional additional class names for logo image
     typeWriterExamples?:string[]
+    diagonalColor:string
   }
   
   const FullBodyHero = ({
@@ -36,7 +37,8 @@ export interface FullBodyHeroProps {
     altTextFullBody = "full body portrait",
     fullBodyStyles = "",
     logoStyles = "",
-    typeWriterExamples
+    typeWriterExamples,
+    diagonalColor
   }: FullBodyHeroProps): React.JSX.Element => {
     const [startTypeAlong, setStartTypeAlong] = useState(false);
     const [startImage, setStartImage] = useState(false);
@@ -68,7 +70,9 @@ export interface FullBodyHeroProps {
   />
           )}
       
-        <DiagonalClipContainer />
+        <DiagonalClipContainer
+        mainColor={diagonalColor}
+         />
         <section className="w-full max-w-[1500px] mx-auto">
           <section
             className="mx-auto 

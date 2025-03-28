@@ -1,27 +1,24 @@
 import { motion, useMotionValue, useMotionTemplate, animate } from "framer-motion";
 import { useEffect } from "react";
+import useGenerateColorShades from '../../../hooks/generateColorShades/gerenateColorShades'; // Import the hook
 
-// Slight variations of #00bfff for a subtle aurora effect
-const COLORS_AURORA = [
-    "#00bfff", // Light blue (Original)
-    "#0099cc", // Slightly darker blue
-    "#0077b3", // Mid-tone blue
-    "#005f8a", // Darker blue
-    "#004f6b", // Even darker blue
-  ];
+interface DiagonalClipContainerProps {
+    mainColor: string; // Prop for the main color
+  }
   
-
-const DiagonalClipContainer = () => {
-  const color = useMotionValue(COLORS_AURORA[0]);
+  const DiagonalClipContainer = ({ mainColor }: DiagonalClipContainerProps): React.JSX.Element => {
+  const colors = useGenerateColorShades(mainColor); // Get the generated colors based on the main color
+  
+  const color = useMotionValue(colors[0]); // Use the first generated color for the animation
 
   useEffect(() => {
-    animate(color, COLORS_AURORA, {
+    animate(color, colors, {
       ease: "easeInOut",
       duration: 8, // Smooth transition time
       repeat: Infinity,
       repeatType: "mirror",
     });
-  }, []);
+  }, [colors, color]);
 
   const background = useMotionTemplate`linear-gradient(to bottom, #2EC9FF, ${color})`;
 
@@ -44,8 +41,6 @@ const DiagonalClipContainer = () => {
           duration: 1.5,
           ease: "easeInOut",
         }}
-        // For mobile: Apply larger polygon, for md and above: apply the original polygon
-
       />
 
       {/* Second Polygon (Opposite Corner) */}
@@ -65,8 +60,6 @@ const DiagonalClipContainer = () => {
           duration: 1.5,
           ease: "easeInOut",
         }}
-        // For mobile: Apply larger polygon, for md and above: apply the original polygon
-     
       />
     </div>
   );

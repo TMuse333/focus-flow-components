@@ -14,7 +14,7 @@ export interface CarouselHeroProps {
   mainHeader: string;
   titleText: string;
   descriptionText: string;
-  buttonText: string;
+
   carouselData: CarouselData[];
   button?:React.ReactNode
 }
@@ -91,14 +91,13 @@ const Carousel = ({ carouselData }: { carouselData: CarouselData[] }) => {
   );
 };
 
-const CarouselHero: React.FC<CarouselHeroProps> = ({
-  mainHeader,
-  titleText,
-  descriptionText,
-  buttonText,
-  carouselData,
-  button
-}) => {
+const CarouselHero = ({
+    mainHeader,
+    titleText,
+    descriptionText,
+    carouselData,
+    button,
+  }: CarouselHeroProps): React.JSX.Element => {
   const [startPTag, setStartPTag] = useState(false);
   const [startTypeAlong, setStartTypeAlong] = useState(false);
 

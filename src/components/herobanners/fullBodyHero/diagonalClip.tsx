@@ -1,19 +1,20 @@
 import { motion, useMotionValue, useMotionTemplate, animate } from "framer-motion";
 import { useEffect } from "react";
-import useGenerateColorShades from '../../../hooks/generateColorShades/gerenateColorShades'; // Import the hook
+import useGenerateColorShades from '../../../hooks/generateColorShades/generateColorShades'; // Import the hook
 
 interface DiagonalClipContainerProps {
-    mainColor: string; // Prop for the main color
-  }
-  
-  const DiagonalClipContainer = ({ mainColor }: DiagonalClipContainerProps): React.JSX.Element => {
-  const colors = useGenerateColorShades(mainColor); // Get the generated colors based on the main color
+  mainColor: string; // Prop for the main color
+}
 
-  console.log('colors generated',colors)
+const DiagonalClipContainer = ({ mainColor }: DiagonalClipContainerProps): React.JSX.Element => {
+  const colors = useGenerateColorShades(mainColor); // Get the generated colors based on the main color
   
-  const color = useMotionValue(colors[0]); // Use the first generated color for the animation
+  console.log('colors generated', colors);
+  
+  const color = useMotionValue(colors[0]); // Initialize with the first color in the array
 
   useEffect(() => {
+    // Ensure colors and motion value are properly updated on mount
     animate(color, colors, {
       ease: "easeInOut",
       duration: 8, // Smooth transition time
@@ -22,6 +23,7 @@ interface DiagonalClipContainerProps {
     });
   }, [colors, color]);
 
+  // Use the motion value for the background to ensure it's updated with animation
   const background = useMotionTemplate`linear-gradient(to bottom, #2EC9FF, ${color})`;
 
   return (

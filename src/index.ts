@@ -39,3 +39,7 @@ export type {FullBodyHeroProps} from './components/herobanners/fullBodyHero/full
 
 export {default as CarouselHero} from './components/herobanners/carouselHero/carouselHero';
 export type { CarouselHeroProps } from './components/herobanners/carouselHero/carouselHero'; // Correctly exporting the props type
+
+export {default as ImageLogoHero} from './components/herobanners/imageLogoHero/imageLogoHero'
+export type { ImageLogoHeroProps} from './components/herobanners/imageLogoHero/imageLogoHero'
+

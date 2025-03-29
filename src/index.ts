@@ -52,3 +52,7 @@ export type { FullImageDisplayProps} from './components/solutionPieces/fullImage
 export {default as SlidingText} from './components/textAnimations/slidingText/slidingText'
 export type{ SlidingTextProps} from './components/textAnimations/slidingText/slidingText'
 
+export {default as FeatureBoxes} from './components/textComponents/featureBoxes/featureBoxes'
+export type {FeatureBoxProps} from './components/textComponents/featureBoxes/featureBoxes'
+
+

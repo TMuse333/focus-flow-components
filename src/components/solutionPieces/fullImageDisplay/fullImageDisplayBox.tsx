@@ -139,7 +139,7 @@ const variants = {
   };
 
 // Define the type for the InteractiveBoxes component props
-interface FullImageDisplayProps {
+export interface FullImageDisplayProps {
   boxes: InteractiveBoxProps[];
   bgColor?:string
 }

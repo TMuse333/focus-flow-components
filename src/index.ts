@@ -46,3 +46,9 @@ export type { ImageLogoHeroProps} from './components/herobanners/imageLogoHero/i
 export {default as DisplayBoxes} from './components/solutionPieces/displayBoxes/displayBoxes'
 export type{ DisplayBoxProps} from './components/solutionPieces/displayBoxes/displayBoxes'
 
+export {default as FullImageDisplay} from './components/solutionPieces/fullImageDisplay/fullImageDisplayBox'
+export type { FullImageDisplayProps} from './components/solutionPieces/fullImageDisplay/fullImageDisplayBox'
+
+export {default as SlidingText} from './components/textAnimations/slidingText/slidingText'
+export type{ SlidingTextProps} from './components/textAnimations/slidingText/slidingText'
+

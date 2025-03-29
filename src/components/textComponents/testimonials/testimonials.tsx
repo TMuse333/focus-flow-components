@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+
 
 export interface TestimonialProps {
     testimonials: {
@@ -9,6 +9,7 @@ export interface TestimonialProps {
         author: string,
         effect:string
     }[]
+    bgColor:string
 }
 
 
@@ -20,7 +21,7 @@ export interface TestimonialProps {
 
 
 
-const Testimonials = ({ testimonials }: TestimonialProps): React.JSX.Element => {
+const Testimonials = ({ testimonials,bgColor }: TestimonialProps): React.JSX.Element => {
 
 
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -35,10 +36,10 @@ const Testimonials = ({ testimonials }: TestimonialProps): React.JSX.Element => 
 
 
     return (
-        <section className='bg-gradient-to-b from-[#0077b3] to-blue-300 border border-white ml-auto mr-auto max-w-[1200px] w-screen 
+        <section className={`border border-white ml-auto mr-auto max-w-[1200px] w-screen 
           relative mb-8 rounded-lg
-         h-[550px] sm:w-[90vw]
-        '>
+         h-[550px] sm:w-[90vw] ${bgColor}
+        `}>
             <div className="absolute sm:text-5xl top-[40%] right-0 text-2xl hover:text-blue-200
            hover:scale-[1.15] transition-all"
            onClick={nextTestimonial}>

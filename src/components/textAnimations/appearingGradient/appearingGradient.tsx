@@ -102,7 +102,7 @@ const AppearingGradient = ({
                 >
                     {text}
                 </motion.h2>
-                <h3 id={`${text}-subHeader`} className={`text-center text-white mt-4 px-6 ${!description ? 'text-xl sm:text-2xl md:text-3xl' : 'text-md sm:text-lg md:text-xl'} opacity-0`}>
+                <h3 id={`${text}-subHeader`} className={`text-center  mt-4 px-6 ${!description ? 'text-xl sm:text-2xl md:text-3xl' : 'text-md sm:text-lg md:text-xl'} opacity-0`}>
                     {subText}
                 </h3>
             </div>

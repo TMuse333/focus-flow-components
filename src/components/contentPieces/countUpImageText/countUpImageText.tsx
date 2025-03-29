@@ -108,7 +108,7 @@ const CountUpImageText = ({
             variants={fadeInVariants(0)}
             initial="initial"
             animate={inView ? "animate" : "initial"}
-            className="mx-auto text-3xl text-black font-bold text-center sm:text-4xl md:text-5xl mt-12 mb-4 md:hidden"
+            className="mx-auto text-3xl  font-bold text-center sm:text-4xl md:text-5xl mt-12 mb-4 md:hidden"
           >
             {title}
           </motion.h2>
@@ -142,7 +142,7 @@ const CountUpImageText = ({
               variants={fadeInVariants(0)}
               initial="initial"
               animate={inView ? "animate" : "initial"}
-              className="mx-auto text-3xl text-black font-bold text-center sm:text-4xl md:text-5xl mt-12 mb-4 hidden md:block"
+              className="mx-auto text-3xl font-bold text-center sm:text-4xl md:text-5xl mt-12 mb-4 hidden md:block"
             >
               {title}
             </motion.h2>
@@ -151,7 +151,7 @@ const CountUpImageText = ({
               variants={fadeInVariants(0.1)}
               initial="initial"
               animate={inView ? "animate" : "initial"}
-              className="text-black md:px-4 font-semibold mb-6 mt-4 md:mt-0"
+              className="md:px-4 font-semibold mb-6 mt-4 md:mt-0"
             >
               {description}
             </motion.p>
@@ -168,7 +168,7 @@ const CountUpImageText = ({
                   return (
                     <div
                       key={index}
-                      className="flex flex-col text-black items-center justify-center text-center ml-4 mb-6 md:ml-0 mr-auto"
+                      className="flex flex-col  items-center justify-center text-center ml-4 mb-6 md:ml-0 mr-auto"
                     >
                       <motion.p
                         variants={statVariants(delay)}

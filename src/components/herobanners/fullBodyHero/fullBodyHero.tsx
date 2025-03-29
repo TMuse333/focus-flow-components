@@ -21,7 +21,8 @@ export interface FullBodyHeroProps {
     fullBodyStyles?: string; // Optional additional class names for full body image
     logoStyles?: string;    // Optional additional class names for logo image
     typeWriterExamples?:string[]
-    diagonalColor:string
+    diagonalColor:string,
+    bgColor?:string
   }
   
   const FullBodyHero = ({
@@ -38,7 +39,8 @@ export interface FullBodyHeroProps {
     fullBodyStyles = "",
     logoStyles = "",
     typeWriterExamples,
-    diagonalColor
+    diagonalColor,
+    bgColor
   }: FullBodyHeroProps): React.JSX.Element => {
     const [startTypeAlong, setStartTypeAlong] = useState(false);
     const [startImage, setStartImage] = useState(false);
@@ -54,8 +56,8 @@ export interface FullBodyHeroProps {
       <header
         className="
          md:min-h-screen relative items-center 
-         mx-auto text-black
-         text-white
+         mx-auto 
+        
          overflow-x-hidden
          relative z-[3]"
       >

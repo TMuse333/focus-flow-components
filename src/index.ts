@@ -43,3 +43,6 @@ export type { CarouselHeroProps } from './components/herobanners/carouselHero/ca
 export {default as ImageLogoHero} from './components/herobanners/imageLogoHero/imageLogoHero'
 export type { ImageLogoHeroProps} from './components/herobanners/imageLogoHero/imageLogoHero'
 
+export {default as DisplayBoxes} from './components/solutionPieces/displayBoxes/displayBoxes'
+export type{ DisplayBoxProps} from './components/solutionPieces/displayBoxes/displayBoxes'
+

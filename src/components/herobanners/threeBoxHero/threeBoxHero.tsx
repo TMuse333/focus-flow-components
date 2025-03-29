@@ -12,10 +12,7 @@ export interface ThreeBoxHeroProps {
     title: string;
     description: string;
   }[];
-  buttonText: string;
-  destination: string;
-  buttonText2: string;
-  destination2: string;
+
   gradient?: {
     color1: string;
     color2: string;
@@ -32,10 +29,6 @@ const ThreeBoxHero = ({
   h2,
   pTag,
   boxData,
-  buttonText,
-  destination,
-  buttonText2,
-  destination2,
   bgColor,
   gradient,
   boxBgColor,
@@ -163,7 +156,7 @@ const ThreeBoxHero = ({
       </motion.h2>
       <motion.p
         variants={textVariants}
-        className="text-white w-[80%] mx-auto text-center"
+        className=" w-[80%] mx-auto text-center"
       >
         {pTag}
       </motion.p>
@@ -172,41 +165,17 @@ const ThreeBoxHero = ({
         variants={containerVariants}
         className="mt-4 flex justify-center items-center"
       >
-        {button1 ? (
-          <motion.div variants={buttonVariants} whileHover="hover">
-            {button1}
-          </motion.div>
-        ) : (
-          <Link href={destination}>
-            <motion.button
-              variants={buttonVariants}
-              whileHover="hover"
-              className={`text-white rounded-2xl p-4 mr-4 hover:opacity-80 ${
-                boxBgColor || "bg-[#002D5F]"
-              }`}
-            >
-              {buttonText}
-            </motion.button>
-          </Link>
-        )}
+       {button1 && (
+        <>
+        {button1}
+        </>
+       )}
+         {button2 && (
+        <>
+        {button2}
+        </>
+       )}
 
-        {button2 ? (
-          <motion.div variants={buttonVariants} whileHover="hover">
-            {button2}
-          </motion.div>
-        ) : (
-          <Link href={destination2}>
-            <motion.button
-              variants={buttonVariants}
-              whileHover="hover"
-              className={`text-[#002D5F] rounded-2xl p-3 ml-4 border border-[#002D5F] hover:opacity-80 ${
-                boxBgColor ? `${boxBgColor} bg-opacity-20` : "bg-[#f0f4f8]"
-              }`}
-            >
-              {buttonText2}
-            </motion.button>
-          </Link>
-        )}
       </motion.section>
 
       <motion.section

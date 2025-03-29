@@ -13,12 +13,11 @@ export interface ImageTextBoxProps {
   description: string;
   reverse?: boolean;
   title: string;
-  buttonLink?: string;
-  buttonText?: string;
   bgColor?:string;
   customImage?: React.ReactNode
   objectContain?:boolean,
-  isMobile:boolean
+  isMobile:boolean,
+  button?:React.ReactNode
 
 }
 
@@ -28,12 +27,11 @@ const ImageTextBox = ({
     description,
     reverse = false,
     title,
-    buttonLink,
-    buttonText,
     bgColor,
     customImage,
     objectContain,
     isMobile,
+    button
   }: ImageTextBoxProps): React.JSX.Element => {
   
 
@@ -160,20 +158,11 @@ const imageFadeIn = (delay:number) => {
           
           {description}
           <br/>
-          {buttonLink && (
-          <Link href={buttonLink}>
-          <motion.button
-  className="mt-6 p-3  rounded-xl text-white bg-[#338d96]
-            
-            hover:scale-[1.05]  transition-all "
-
-             variants={fadeIn(isMobile ? 0 : 0.4)}
-             initial="initial"
-             animate={pInView ? 'animate' : 'initial'}>
-              {buttonText}
-            </motion.button>
-          </Link>
-        )}
+          {button && (
+       <>
+       {button}
+       </>
+          )}
         </motion.p>
 
        

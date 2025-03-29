@@ -9,7 +9,7 @@ export interface TypeWriterProps {
 
 const TypeWriter = ({ examples, button1, button2 }: TypeWriterProps): React.JSX.Element => {
   return (
-    <div className="flex items-start justify-start px-8 text-white">
+    <div className="flex items-start justify-start px-8 ">
       <BlockInTextCard tag="/ Support" examples={examples} button1={button1} button2={button2} />
     </div>
   );

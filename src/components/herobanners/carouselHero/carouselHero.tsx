@@ -107,7 +107,7 @@ const CarouselHero = ({
 
   return (
     <header
-      className="flex flex-col md:flex-row md:h-screen relative items-center mx-auto max-w-[2200px] text-black md:mt-[-4rem] bg-white"
+      className="flex flex-col md:flex-row md:h-screen relative items-center mx-auto max-w-[2200px] md:mt-[-4rem] bg-white"
     >
       <section className="flex flex-col md:w-[40vw] justify-center items-center py-4">
         <motion.h1

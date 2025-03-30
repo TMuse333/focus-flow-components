@@ -218,11 +218,12 @@ const CarouselController: React.FC<ControllerProps> = ({
       </button>
       <button className='relative rounded-full bg-gray-700 h-[50px] w-[50px] mt-auto mb-auto ml-6'>
       {showRefreshBar ? (
-  <div className="ml-auto mr-auto scale-[1.5]
+
+  <button onClick={resetSlideShow}
+  className="w-14 h-14 flex items-center justify-center bg-gray-700  hover:bg-gray-400 text-white rounded-full shadow-lg transition duration-200
+  ml-auto mr-auto scale-[1.5]
   absolute top-1/2 left-1/2
-  -translate-x-1/2 -translate-y-1/2" onClick={resetSlideShow}>
-  <button className="w-14 h-14 flex items-center justify-center bg-blue-500 
-  hover:bg-blue-600 text-white rounded-full shadow-lg transition duration-200">
+  -translate-x-1/2 -translate-y-1/2">
   <svg
     className="w-6 h-6"
     fill="currentColor"
@@ -234,13 +235,15 @@ const CarouselController: React.FC<ControllerProps> = ({
   </svg>
 </button>
 
-  </div>
+  
 ) : slideShowPaused ? (
-  <div className="ml-auto mr-auto scale-[1.5]
+
+    <button onClick={togglePlay}
+    className="w-14 h-14 flex items-center justify-center 
+  text-white rounded-full shadow-lg transition duration-200
+  ml-auto mr-auto scale-[1.5]  bg-gray-700  hover:bg-gray-400
   absolute top-1/2 left-1/2
-  -translate-x-1/2 -translate-y-1/2" onClick={togglePlay}>
-    <button className="w-14 h-14 flex items-center justify-center bg-blue-500 
-  hover:bg-blue-600 text-white rounded-full shadow-lg transition duration-200">
+  -translate-x-1/2 -translate-y-1/2">
   <svg
     className="w-6 h-6"
     fill="currentColor"
@@ -251,13 +254,14 @@ const CarouselController: React.FC<ControllerProps> = ({
   </svg>
 </button>
 
-  </div>
+
 ) : (
-  <div className="ml-auto mr-auto scale-[1.5]
+
+    <button onClick={togglePlay}
+    className="ml-auto mr-auto scale-[1.5]
   absolute top-1/2 left-1/2
-  -translate-x-1/2 -translate-y-1/2" onClick={togglePlay}>
-    <button className="w-14 h-14 flex items-center justify-center bg-red-500 
-  hover:bg-red-600 text-white rounded-full shadow-lg transition duration-200">
+  -translate-x-1/2 -translate-y-1/2
+    w-14 h-14 flex items-center justify-center bg-gray-700  hover:bg-gray-400 text-white rounded-full shadow-lg transition duration-200">
   <svg
     className="w-6 h-6"
     fill="currentColor"
@@ -268,7 +272,7 @@ const CarouselController: React.FC<ControllerProps> = ({
   </svg>
 </button>
 
-  </div>
+
 )}
       </button>
     </div>

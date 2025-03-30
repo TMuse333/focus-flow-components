@@ -76,16 +76,16 @@ const PriceCard:React.FC<PriceCard> = ({
     )
 }
 
-interface PriceCardProps {
+export interface PriceCardsProps {
      title?:string,
      description?:string
     priceData:PriceCard[]
 }
 
 
-const Pricing = ({
+const PriceCards = ({
     priceData, title,description
-}:PriceCardProps):React.JSX.Element => {
+}:PriceCardsProps):React.JSX.Element => {
 
 
 
@@ -118,4 +118,4 @@ const Pricing = ({
     )
 }
 
-export default Pricing
+export default PriceCards

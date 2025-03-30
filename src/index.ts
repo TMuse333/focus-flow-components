@@ -64,3 +64,6 @@ export type { CarouselGridProps} from './components/carousels/gridCarousel/gridC
 export {default as SlideShowCarousel} from './components/carousels/slideShowCarousel/slideShowCarousel'
 export type { SlideShowCarouselProps} from './components/carousels/slideShowCarousel/slideShowCarousel'
 
+export {default as PriceCards} from './components/solutionPieces/priceCards/priceCards'
+export type{PriceCardsProps} from './components/solutionPieces/priceCards/priceCards'
+

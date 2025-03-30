@@ -197,6 +197,8 @@ const CarouselGrid = ({ images,
                 }}
               >
                 <Image
+                width={600}
+                height={1300}
                 onClick={()=>handleCarouselClick(index)}
                   alt={image.alt}
                   src={image.src}

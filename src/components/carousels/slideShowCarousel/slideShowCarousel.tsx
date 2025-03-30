@@ -18,7 +18,9 @@ export interface SlideShowCarouselProps {
         description: string
         isVideo?:boolean
     }[]
-    isMobile:boolean
+    isMobile:boolean,
+    slideColor:string,
+    bgColor?:string
 
 }
 
@@ -32,6 +34,7 @@ interface SliderProps {
     shift:number,
     title?:string,
     isVideo?:boolean
+    slideColor:string
   
 }
 
@@ -287,7 +290,7 @@ const CarouselElement: React.FC<SliderProps> = ({
   alt,
   description,
   index,
-
+  slideColor,
   currentElement,
   shift,
   title,
@@ -332,7 +335,7 @@ useEffect(() => {
       <section 
           id={`carousel-element-${index}`}
           className={`w-[95vw] pt-8  relative md:max-h-[800px]  h-[90vh]
-             flex-shrink-0 overflow-y-hidden
+             flex-shrink-0 overflow-y-hidden ${slideColor}
      `}
           style={{
               transform: `translateX(${(shift * 75)}%)`,
@@ -409,7 +412,7 @@ h-[90vh] bg-black-200 md:max-h-[800px] overflow-y-visible py-4'>
 
 
 
-const SlideShowCarousel = ({ images,isMobile }:SlideShowCarouselProps):React.JSX.Element => {
+const SlideShowCarousel = ({ images,isMobile,slideColor,bgColor }:SlideShowCarouselProps):React.JSX.Element => {
     const [currentElement, setCurrentElement] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -534,11 +537,11 @@ const SlideShowCarousel = ({ images,isMobile }:SlideShowCarouselProps):React.JSX
 
 
     return (
-        <section className='relative ml-auto mr-auto w-screen mb-[10rem]
+        <section className={`relative ml-auto mr-auto w-screen mb-[10rem]
    h-[90vh] overflow-x-hidden
         md:max-h-[800px]
-      
-        '>
+      ${bgColor ? `${bgColor}` : ''}
+    `}>
           <div ref={componentRef}
           className='relative ml-auto mr-auto w-screen 
        h-[90vh] 
@@ -565,6 +568,7 @@ const SlideShowCarousel = ({ images,isMobile }:SlideShowCarouselProps):React.JSX
                         carouselLength={images.length}
                         currentElement={currentElement}
                         shift={shift}
+                        slideColor={slideColor}
                     />
                 ))}
             </div>

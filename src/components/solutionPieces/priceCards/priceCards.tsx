@@ -7,13 +7,14 @@ interface PriceCard {
     price:string,
     description:string,
     aspects:string[]
+    cardColor:string
   
 }
 
 
 const PriceCard:React.FC<PriceCard> = ({
     name,price,description,
-    aspects,
+    aspects,cardColor
    
 }) => {
 
@@ -42,15 +43,15 @@ const PriceCard:React.FC<PriceCard> = ({
     };
 
     return (
-        <div className="w-[90vw]
+        <div className={`w-[90vw]
         md:w-[30vw] rounded-2xl
         text-black
         border border-white mx-auto flex flex-col
         items-center justify-center md:h-[80vh]
          max-w-[350px] mb-6 pb-8
         
-      bg-gray-300         transition-colors
-         "
+      ${cardColor}        transition-colors
+         `}
          style={style}
          onMouseMove={handleMouseMove}
          onMouseLeave={handleMouseLeave}>
@@ -80,11 +81,12 @@ export interface PriceCardsProps {
      title?:string,
      description?:string
     priceData:PriceCard[]
+    cardColor:string
 }
 
 
 const PriceCards = ({
-    priceData, title,description
+    priceData, title,description,cardColor
 }:PriceCardsProps):React.JSX.Element => {
 
 
@@ -111,6 +113,7 @@ const PriceCards = ({
                 <PriceCard
                 {...price}
                 key={index}
+                cardColor={cardColor}
                 />
             ))}
         </section>

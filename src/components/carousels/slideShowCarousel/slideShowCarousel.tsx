@@ -219,7 +219,7 @@ const CarouselController: React.FC<ControllerProps> = ({
           </div>
         ))}
       </button>
-      <button className='relative rounded-full bg-gray-700 h-[50px] w-[50px] mt-auto mb-auto ml-6'>
+      <div className='relative rounded-full bg-gray-700 h-[50px] w-[50px] mt-auto mb-auto ml-6'>
       {showRefreshBar ? (
 
   <button onClick={resetSlideShow}
@@ -277,7 +277,7 @@ const CarouselController: React.FC<ControllerProps> = ({
 
 
 )}
-      </button>
+      </div>
     </div>
   );
 }

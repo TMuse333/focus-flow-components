@@ -335,7 +335,7 @@ useEffect(() => {
       <section 
           id={`carousel-element-${index}`}
           className={`w-[95vw] pt-8  relative md:max-h-[800px]  h-[90vh]
-             flex-shrink-0 overflow-y-hidden ${slideColor}
+             flex-shrink-0 overflow-y-hidden 
      `}
           style={{
               transform: `translateX(${(shift * 75)}%)`,
@@ -349,9 +349,9 @@ useEffect(() => {
 
       
 
-<div className='flex mx-auto flex-col items-center
-justify-center   bg-gradient-to-b from-[#0077b3] to-blue-300  rounded-2xl mr-4 ml-4
-h-[90vh] bg-black-200 md:max-h-[800px] overflow-y-visible py-4'>
+<div className={`flex mx-auto flex-col items-center
+justify-center  ${slideColor}  rounded-2xl mr-4 ml-4
+h-[90vh]  md:max-h-[800px] overflow-y-visible py-4`}>
    <section className='flex justify-around
     items-center flex-col md:flex-row
    mb-auto mt-12

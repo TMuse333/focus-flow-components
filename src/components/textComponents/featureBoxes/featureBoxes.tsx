@@ -1,7 +1,7 @@
 import Image from "next/image";
-import React from "react";
+import React, {useRef} from "react";
 import SlidingText from "../../textAnimations/slidingText/slidingText"
-
+import {useInView, motion} from 'framer-motion'
 
 interface BoxProps {
     src:string,
@@ -28,30 +28,83 @@ export interface FeatureBoxProps {
 }
 
 
-const FeatureBox:React.FC<BoxProps> = ({
-    src,alt,title,description,
-    boxColor
-    
-}) => {
-
+const FeatureBox: React.FC<BoxProps> = ({
+    src,
+    alt,
+    title,
+    description,
+    boxColor,
+  }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 1 });
+  
+    const containerVariants = {
+      hidden: { y: -50, opacity: 0 },
+      visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: "spring",
+          stiffness: 100,
+          damping: 15,
+          mass: 1,
+        },
+      },
+    };
+  
+    const childVariants = {
+      hidden: { y: -20, opacity: 0 },
+      visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: "spring",
+          stiffness: 500,
+          damping: 7,
+        },
+      },
+    };
+  
     return (
-        <div className={`w-[90vw] mx-auto p-4 mb-8
-        border border-black rounded-xl sm:w-[40vw]
-       ${boxColor} max-w-[550px]
-        `}>
-            <Image
-            src={src}
-            alt={alt}
-            width={600}
-            height={1300}
-            className='w-[30px] sm:w-[35px] md:h-[40px] mx-auto mb-4 object-contain
-            '
-            />
-            <h3 className="text-lg text-black font-semibold">{title}</h3>
-            <p>{description}</p>
-        </div>
-    )
-}
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        className={`w-[90vw] mx-auto p-4 mb-8 border border-black rounded-xl sm:w-[40vw] ${boxColor} max-w-[550px]`}
+      >
+       <motion.div
+        variants={childVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        transition={{ ...childVariants.visible.transition, delay: 0.1 }}
+        className="w-[30px] sm:w-[35px] md:h-[40px] mx-auto mb-4"
+      >
+        <Image src={src} alt={alt} width={600} height={1300} className="object-contain" />
+      </motion.div>
+  
+        <motion.h3
+          className="text-lg  font-semibold"
+          variants={childVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          transition={{ ...childVariants.visible.transition, delay: 0.2 }}
+        >
+          {title}
+        </motion.h3>
+  
+        <motion.p
+          variants={childVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          transition={{ ...childVariants.visible.transition, delay: 0.3 }}
+        >
+          {description}
+        </motion.p>
+      </motion.div>
+    );
+  };
+  
 
 
 const FeatureBoxes = ({

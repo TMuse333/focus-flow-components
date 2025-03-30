@@ -15,9 +15,9 @@ export interface CarouselGridProps {
 
 }
 
-const CarouselGrid: React.FC<CarouselGridProps> = ({ images,
+const CarouselGrid = ({ images,
     isMobile, bgColor
- }) => {
+ }:CarouselGridProps):React.JSX.Element => {
   const [shift, setShift] = useState<number>(0);
   const [currentImage, setCurrentImage] = useState<number>(0);
   const [leftClicked, setLeftClicked] = useState<boolean>(false);

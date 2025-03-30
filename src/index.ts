@@ -55,4 +55,7 @@ export type{ SlidingTextProps} from './components/textAnimations/slidingText/sli
 export {default as FeatureBoxes} from './components/textComponents/featureBoxes/featureBoxes'
 export type {FeatureBoxProps} from './components/textComponents/featureBoxes/featureBoxes'
 
+export {default as Carousel} from './components/carousels/carousel/carousel'
+export type { CarouselProps} from './components/carousels/carousel/carousel'
+
 

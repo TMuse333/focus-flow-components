@@ -16,7 +16,8 @@ export interface CarouselProps {
 
   }[];
   hasDescription?: boolean;
-  style?:string,
+  bgColor?:string
+
   button?:{
     buttonColor:string,
     buttonHoverColor:string,
@@ -25,7 +26,7 @@ export interface CarouselProps {
 }
 
 const Carousel = ({ images, hasDescription,
-style,button, }:CarouselProps) : React.JSX.Element => {
+button,bgColor }:CarouselProps) : React.JSX.Element => {
   const [shift, setShift] = useState<number>(0);
   const [currentImage, setCurrentImage] = useState<number>(0);
   const [leftClicked, setLeftClicked] = useState<boolean>(false);
@@ -145,11 +146,9 @@ style,button, }:CarouselProps) : React.JSX.Element => {
         className={`w-screen  
           flex flex-col   ml-auto mr-auto
           justify-center items-center md:flex-row 
-          rounded-2xl
+          rounded-2xl ${bgColor ? `${bgColor}` : ''}
           mb-5 ${!carouselClicked || hasDescription ? 'max-w-[1300px]  relative' : 'bg-black h-screen fixed top-0 left-0 z-[95]'}`}
-          style={{
-            background:style
-          }}
+          
       >
         <div
           className={`mt-10 ml-auto mr-auto rounded-xl flex relative ${hasDescription || !carouselClicked ? '' : 'w-[100%]'} `}
@@ -209,7 +208,7 @@ style,button, }:CarouselProps) : React.JSX.Element => {
   exit={{ opacity: 0 }}
   transition={{ duration: 0.7 }}
   className='md:hidden  text-center text-2xl 
-  font-semibold bg-gradient-to-b from-black to-gray-700 bg-clip-text text-transparent
+ 
   mb-3 
   '>{images[currentImage].title}
   </motion.h4>
@@ -276,10 +275,10 @@ style,button, }:CarouselProps) : React.JSX.Element => {
               max-w-[900px] ` : ' w-screen max-w-[1575px] h-screen relative'}
               z-[45]`}
             >
-              <button aria-label="Previous image" className='bg-transparent p-0 absolute left-0 top-[45%] text-white'>
+              <button aria-label="Previous image" className='bg-transparent p-0 absolute left-0 top-[45%]'>
                 <ChevronLeft onClick={handlePrevClick} size={40} />
               </button>
-              <button aria-label="Next image" className='bg-transparent p-0 absolute right-0 top-[45%] text-white'>
+              <button aria-label="Next image" className='bg-transparent p-0 absolute right-0 top-[45%] '>
                 <ChevronRight onClick={handleNextClick} size={40} />
               </button>
             </div>
@@ -297,8 +296,8 @@ style,button, }:CarouselProps) : React.JSX.Element => {
               transition={{ duration: 0.7 }}
             >
               <h4 className='hidden md:block  text-center text-5xl 
-              font-semibold bg-gradient-to-b from-black to-gray-700 bg-clip-text text-transparent'>{images[currentImage].title}</h4>
-              <p className="text-black text-center md:text-left md:mt-[3rem]  px-3 md:pl-8 text-lg sm:text-xl">
+              font-semibold '>{images[currentImage].title}</h4>
+              <p className=" text-center md:text-left md:mt-[3rem]  px-3 md:pl-8 text-lg sm:text-xl">
                 {images[currentImage].description}
                { images[currentImage].link != undefined &&
                button && (
@@ -319,7 +318,7 @@ style,button, }:CarouselProps) : React.JSX.Element => {
        
         {carouselClicked && !hasDescription && (
           <button
-            className='fixed bottom-[2%] left-[50%] -translate-x-[50%] z-[100] bg-gray-200 p-2 rounded-xl text-black'
+            className='fixed bottom-[2%] left-[50%] -translate-x-[50%] z-[100] bg-gray-200 p-2 rounded-xl '
             onClick={handleCarouselClick}
           >
             Collapse

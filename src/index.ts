@@ -58,4 +58,7 @@ export type {FeatureBoxProps} from './components/textComponents/featureBoxes/fea
 export {default as Carousel} from './components/carousels/carousel/carousel'
 export type { CarouselProps} from './components/carousels/carousel/carousel'
 
+export {default as CarouselGrid} from './components/carousels/gridCarousel/gridCarousel'
+export type { CarouselGridProps} from './components/carousels/gridCarousel/gridCarousel'
+
 

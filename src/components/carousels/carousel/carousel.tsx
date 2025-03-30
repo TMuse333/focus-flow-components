@@ -305,7 +305,8 @@ button,bgColor }:CarouselProps) : React.JSX.Element => {
                     href={images[currentImage].link as string }
                     
                     >
-                        <button className={`p-3 rounded-2xl
+                        <button className={`p-3 rounded-2xl mt-4 transition-colors
+                        hover:scale-[1.05]
                         ${button.buttonColor} ${button.buttonHoverColor}`}>
                                 {button.buttonText}
                         </button>

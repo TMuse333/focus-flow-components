@@ -61,4 +61,6 @@ export type { CarouselProps} from './components/carousels/carousel/carousel'
 export {default as CarouselGrid} from './components/carousels/gridCarousel/gridCarousel'
 export type { CarouselGridProps} from './components/carousels/gridCarousel/gridCarousel'
 
+export {default as SlideShowCarousel} from './components/carousels/slideShowCarousel/slideShowCarousel'
+export type { SlideShowCarouselProps} from './components/carousels/slideShowCarousel/slideShowCarousel'
 

@@ -67,3 +67,6 @@ export type { SlideShowCarouselProps} from './components/carousels/slideShowCaro
 export {default as PriceCards} from './components/solutionPieces/priceCards/priceCards'
 export type{PriceCardsProps} from './components/solutionPieces/priceCards/priceCards'
 
+export {default as LandingPage1} from './pages/landingPage1/landingPage1'
+export type { LandingPage1Props } from './pages/landingPage1/landingPage1'
+

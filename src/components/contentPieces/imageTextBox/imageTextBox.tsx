@@ -1,7 +1,7 @@
 "use client"; // Enable client-side rendering for this component
 
 import React, { useRef } from "react";
-import Link from "next/link";
+
 import Image from 'next/image'
 import {motion, useInView} from 'framer-motion'
 

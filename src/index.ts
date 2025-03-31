@@ -65,7 +65,7 @@ export {default as SlideShowCarousel} from './components/carousels/slideShowCaro
 export type { SlideShowCarouselProps} from './components/carousels/slideShowCarousel/slideShowCarousel'
 
 export {default as PriceCards} from './components/solutionPieces/priceCards/priceCards'
-export type{PriceCardsProps} from './components/solutionPieces/priceCards/priceCards'
+export type {PriceCardsProps} from './components/solutionPieces/priceCards/priceCards'
 
 export {default as GoogleReviews} from './components/carousels/googleReviews/googleReviews'
 export type { GoogleReviewsProps} from './components/carousels/googleReviews/googleReviews'

@@ -13,37 +13,39 @@ import React from "react";
 // Assuming the other interfaces are imported or defined somewhere
 export interface LandingPage1Props {
   heroProps: FullBodyHeroProps;
-  introSection: ExperienceCardProps;
-  whyUs: TextAndListProps;
-  service1Intro: ImageTextBoxProps;
-  service2Intro: ImageTextBoxProps;
-  reviews: GoogleReviewsProps;
-  service3Intro: ParallaxTextProps;
-  closer: VerticalImageTextBoxProps;
-  textColor: string;
-  bgColor: string;
+//   introSection: ExperienceCardProps;
+//   whyUs: TextAndListProps;
+//   service1Intro: ImageTextBoxProps;
+//   service2Intro: ImageTextBoxProps;
+//   reviews: GoogleReviewsProps;
+//   service3Intro: ParallaxTextProps;
+//   closer: VerticalImageTextBoxProps;
+//   textColor: string;
+//   bgColor: string;
 }
 
 const LandingPage1 = ({
   heroProps,
-  introSection,
-  whyUs,
-  service1Intro,
-  service2Intro,
-  reviews,
-  service3Intro,
-  closer,
-  textColor,
-  bgColor,
+//   introSection,
+//   whyUs,
+//   service1Intro,
+//   service2Intro,
+//   reviews,
+//   service3Intro,
+//   closer,
+//   textColor,
+//   bgColor,
 }: LandingPage1Props): React.JSX.Element => {
   return (
-    <main className={`bg-${bgColor} text-${textColor} w-screen`}>
+    <main 
+    // className={`bg-${bgColor} text-${textColor} w-screen`}
+    >
         <section className='w-screen overflow-x-hidden'>
 
    
 
       <FullBodyHero {...heroProps} />
-      <ExperienceCard {...introSection} />
+      {/* <ExperienceCard {...introSection} />
       <TextAndList {...whyUs} />
       <ImageTextBox {...service1Intro} />
       <ImageTextBox {...service2Intro} />
@@ -52,7 +54,7 @@ const LandingPage1 = ({
       <ParallaxText {...service3Intro} />
       <section className='w-screen overflow-x-hidden'>
 
-      <VerticalImageTextBox {...closer} />
+      <VerticalImageTextBox {...closer} /> */}
       </section>
     </main>
   );

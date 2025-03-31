@@ -12,8 +12,8 @@ import React from "react";
 
 // Assuming the other interfaces are imported or defined somewhere
 export interface LandingPage1Props {
-  heroProps: FullBodyHeroProps;
-//   introSection: ExperienceCardProps;
+//   heroProps: FullBodyHeroProps;
+  introSection: ExperienceCardProps;
 //   whyUs: TextAndListProps;
 //   service1Intro: ImageTextBoxProps;
 //   service2Intro: ImageTextBoxProps;
@@ -25,8 +25,8 @@ export interface LandingPage1Props {
 }
 
 const LandingPage1 = ({
-  heroProps,
-//   introSection,
+//   heroProps,
+  introSection,
 //   whyUs,
 //   service1Intro,
 //   service2Intro,
@@ -44,10 +44,10 @@ const LandingPage1 = ({
 
    
 
-      <FullBodyHero {...heroProps} />
-      {/* <ExperienceCard {...introSection} />
-      <TextAndList {...whyUs} />
-      <ImageTextBox {...service1Intro} />
+      {/* <FullBodyHero {...heroProps} /> */}
+      <ExperienceCard {...introSection} />
+      {/* <TextAndList {...whyUs} /> */}
+      {/* <ImageTextBox {...service1Intro} />
       <ImageTextBox {...service2Intro} />
       <GoogleReviews {...reviews} />
       </section>

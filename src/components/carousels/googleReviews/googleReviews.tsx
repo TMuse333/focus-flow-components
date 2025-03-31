@@ -54,7 +54,7 @@ className='w-[20vw] max-w-[75px] max-h-[75px] h-[20vw] object-cover rounded-full
     )
 }
 
-export interface GoogleReviewProps {
+export interface GoogleReviewsProps {
     reviews:ReviewData[]
     sectionColor:String,
     bgColor?:string,
@@ -65,7 +65,7 @@ export interface GoogleReviewProps {
 const GoogleReviews= ({
     reviews,sectionColor,bgColor,destination,
     description
-}:GoogleReviewProps):React.JSX.Element => {
+}:GoogleReviewsProps):React.JSX.Element => {
 
     const [slideComplete, setSlideComplete] = useState(false)
 

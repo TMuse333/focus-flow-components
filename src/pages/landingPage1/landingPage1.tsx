@@ -3,7 +3,7 @@ import ImageTextBox,{ ImageTextBoxProps } from "../../components/contentPieces/i
 import FullBodyHero, {FullBodyHeroProps} from "../../components/herobanners/fullBodyHero/fullBodyHero";
 import ExperienceCard,{ExperienceCardProps} from "../../components/contentPieces/experienceCard/experienceCard";
 import TextAndList,{TextAndListProps} from "../../components/textComponents/textAndList/textAndList";
-import GoogleReviews, {GoogleReviewProps} from "../../components/carousels/googleReviews/googleReviews";
+import GoogleReviews, {GoogleReviewsProps} from "../../components/carousels/googleReviews/googleReviews";
 import ParallaxText, {ParallaxTextProps} from "../../components/contentPieces/parallaxText/parallaxText";
 import VerticalImageTextBox, {VerticalImageTextBoxProps} from "../../components/contentPieces/verticalImageTextBox/verticalImageTextBox";
 import React from "react";
@@ -17,7 +17,7 @@ export interface LandingPage1Props {
   whyUs: TextAndListProps;
   service1Intro: ImageTextBoxProps;
   service2Intro: ImageTextBoxProps;
-  reviews: GoogleReviewProps;
+  reviews: GoogleReviewsProps;
   service3Intro: ParallaxTextProps;
   closer: VerticalImageTextBoxProps;
   textColor: string;

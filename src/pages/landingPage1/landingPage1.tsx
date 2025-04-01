@@ -1,11 +1,11 @@
 
-import ImageTextBox,{ ImageTextBoxProps } from "../../components/contentPieces/imageTextBox/imageTextBox";
-import FullBodyHero, {FullBodyHeroProps} from "../../components/herobanners/fullBodyHero/fullBodyHero";
-import ExperienceCard,{ExperienceCardProps} from "../../components/contentPieces/experienceCard/experienceCard";
-import TextAndList,{TextAndListProps} from "../../components/textComponents/textAndList/textAndList";
-import GoogleReviews, {GoogleReviewsProps} from "../../components/carousels/googleReviews/googleReviews";
-import ParallaxText, {ParallaxTextProps} from "../../components/contentPieces/parallaxText/parallaxText";
-import VerticalImageTextBox, {VerticalImageTextBoxProps} from "../../components/contentPieces/verticalImageTextBox/verticalImageTextBox";
+// import ImageTextBox,{ ImageTextBoxProps } from "../../components/contentPieces/imageTextBox/imageTextBox";
+// import FullBodyHero, {FullBodyHeroProps} from "../../components/herobanners/fullBodyHero/fullBodyHero";
+import ExperienceCard from "../../components/contentPieces/experienceCard/experienceCard";
+// import TextAndList,{TextAndListProps} from "../../components/textComponents/textAndList/textAndList";
+// import GoogleReviews, {GoogleReviewsProps} from "../../components/carousels/googleReviews/googleReviews";
+// import ParallaxText, {ParallaxTextProps} from "../../components/contentPieces/parallaxText/parallaxText";
+// import VerticalImageTextBox, {VerticalImageTextBoxProps} from "../../components/contentPieces/verticalImageTextBox/verticalImageTextBox";
 import React from "react";
 
 
@@ -56,10 +56,10 @@ const LandingPage1 = ({
     >
         <section className='w-screen overflow-x-hidden'>
 
-   
+    fugazi
 
       {/* <FullBodyHero {...heroProps} /> */}
-      <ExperienceCard {...introSection} />
+      {/* <ExperienceCard {...introSection} /> */}
       {/* <TextAndList {...whyUs} /> */}
       {/* <ImageTextBox {...service1Intro} />
       <ImageTextBox {...service2Intro} />

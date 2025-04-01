@@ -40,7 +40,7 @@ export interface LandingPage1Props {
 
 const LandingPage1 = ({
 //   heroProps,
-  introSection,
+  // introSection,
 //   whyUs,
 //   service1Intro,
 //   service2Intro,

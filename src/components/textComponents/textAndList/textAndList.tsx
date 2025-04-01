@@ -110,7 +110,8 @@ export interface TextAndListProps {
     alt?:string,
     description:string,
     link?:string,
-    isMobile:boolean
+    isMobile:boolean,
+    bgColor?:string
     listAspects:{
         src:string,
         alt:string,
@@ -129,6 +130,7 @@ const TextAndList = ({
     alt,
     link,
     isMobile,
+    bgColor
   }: TextAndListProps): React.JSX.Element => {
   
 
@@ -168,7 +170,8 @@ const TextAndList = ({
     //   }
    
       return (
-        <section className="w-full py-12  bg-gradient-to-b from-[#4D8890] to-[#4D8890]">
+        <section className={`w-full py-12  
+        ${bgColor ? `${bgColor}` : ''}`}>
 
 
         <section ref={ref}

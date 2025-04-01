@@ -73,7 +73,7 @@ const GoogleReviews= ({
         <>
         <section className={`w-screen ${bgColor ? `${bgColor}` : ''}`}>
 
-        </section>
+   
   <SlidingText
   text="Reviews"
   setSlideComplete={setSlideComplete}
@@ -127,10 +127,11 @@ ${sectionColor}] p-2 mt-2
             <div className={`w-[90vw] flex-shrink-0 rounded-2xl
             mr-4 border  max-w-[400px]
             mx-auto ${sectionColor} 
-            flex flex-col  text-black`}>
+            flex flex-col  text-black`}
+            key={index}>
                  <Review
                 {...review}
-                key={index}
+             
                 />
             </div>
             </>
@@ -138,6 +139,7 @@ ${sectionColor}] p-2 mt-2
             ))}
 
         </div>
+     </section>
      </section>
      </>
     )

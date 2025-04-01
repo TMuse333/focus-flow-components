@@ -73,3 +73,6 @@ export type { GoogleReviewsProps} from './components/carousels/googleReviews/goo
 export {default as LandingPage1} from './pages/landingPage1/landingPage1'
 export type { LandingPage1Props } from './pages/landingPage1/landingPage1'
 
+export {default as LandingPage2} from './pages/landingPage2/landingPage2'
+export type { LandingPage2Props} from './pages/landingPage2/landingPage2'
+

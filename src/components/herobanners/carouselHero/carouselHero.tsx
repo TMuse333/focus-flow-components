@@ -14,7 +14,7 @@ export interface CarouselHeroProps {
   mainHeader: string;
   titleText: string;
   descriptionText: string;
-
+  bgColor?:string
   carouselData: CarouselData[];
   button?:React.ReactNode
 }
@@ -47,7 +47,7 @@ const Carousel = ({ carouselData }: { carouselData: CarouselData[] }) => {
 
   return (
     <section
-      className="relative w-[98vw] bg-black md:w-[60vw] rounded-2xl object-contain mx-auto md:block h-[80vh] mt-auto mb-auto border border-white border-4 text-center"
+      className={`relative w-[98vw] bg-black md:w-[60vw] rounded-2xl object-contain mx-auto md:block h-[80vh] mt-auto mb-auto border border-white border-4 text-center`}
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -97,6 +97,7 @@ const CarouselHero = ({
     descriptionText,
     carouselData,
     button,
+    bgColor
   }: CarouselHeroProps): React.JSX.Element => {
   const [startPTag, setStartPTag] = useState(false);
   const [startTypeAlong, setStartTypeAlong] = useState(false);
@@ -106,8 +107,11 @@ const CarouselHero = ({
   };
 
   return (
-    <header
-      className="flex flex-col md:flex-row md:h-screen relative items-center mx-auto max-w-[2200px] md:mt-[-4rem] bg-white"
+    <header className={`w-full ${bgColor ? `${bgColor}` : ''}`}>
+
+
+    <section
+      className="flex flex-col md:flex-row md:h-screen relative items-center mx-auto max-w-[2200px] md:mt-[-4rem] "
     >
       <section className="flex flex-col md:w-[40vw] justify-center items-center py-4">
         <motion.h1
@@ -155,6 +159,7 @@ const CarouselHero = ({
       </section>
 
       <Carousel carouselData={carouselData} />
+    </section>
     </header>
   );
 };

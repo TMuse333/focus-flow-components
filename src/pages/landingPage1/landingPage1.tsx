@@ -13,7 +13,21 @@ import React from "react";
 // Assuming the other interfaces are imported or defined somewhere
 export interface LandingPage1Props {
 //   heroProps: FullBodyHeroProps;
-  introSection: ExperienceCardProps;
+  introSection:{
+    title: string;
+    src: string;
+    alt: string;
+    description: string;
+    aspects: string[];
+    link: string;
+    buttonText: string;
+    reverse?: boolean;
+    aspectHeader: string;
+    bgColor?: string;
+    buttonColor?: string;
+    hoverTextColor?: string;
+    objectContain?: boolean;
+  }
 //   whyUs: TextAndListProps;
 //   service1Intro: ImageTextBoxProps;
 //   service2Intro: ImageTextBoxProps;

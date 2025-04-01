@@ -31,7 +31,7 @@ const LandingPage2 = ({
   textColor,
 }: LandingPage2Props): React.JSX.Element => {
   return (
-    <main className={`bg-${bgColor} text-${textColor} w-screen`}>
+    <main className={`${bgColor} ${textColor} w-screen`}>
       <section className="w-screen overflow-x-hidden">
         <CarouselHero {...carouselHero} />
         <CountUpImageText {...countUpImageText} />

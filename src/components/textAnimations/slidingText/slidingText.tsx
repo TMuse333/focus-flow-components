@@ -7,11 +7,12 @@ export interface SlidingTextProps {
     subText?: string;
     reverse?:boolean
     styles?:string,
-    slideColor?:string
+    slideColor?:string,
+    xPercent?:number
 }
 
 const SlidingText = ({ text, setSlideComplete, subText,
-styles,reverse,slideColor }:SlidingTextProps ): React.JSX.Element => {
+styles,reverse,slideColor,xPercent }:SlidingTextProps ): React.JSX.Element => {
     // Reference to the target element to track scroll position
     const targetRef = useRef(null);
 
@@ -25,7 +26,7 @@ styles,reverse,slideColor }:SlidingTextProps ): React.JSX.Element => {
     });
 
     // Transform scroll progress to x position, scale, opacity, and tilt effect
-    const x = useTransform(scrollYProgress, [0, 0.7], [!reverse ? 350 : -350, 0]); // Adjust slide-in distance
+    const x = useTransform(scrollYProgress, [0,xPercent ? xPercent : 0.7], [!reverse ? 350 : -350, 0]); // Adjust slide-in distance
     const opacity = useTransform(scrollYProgress, [0, 0.2, 0.55], [0, 0, 1]);
 
     // Add drag/tilt effect (rotate on both X and Y axis based on scroll progress)

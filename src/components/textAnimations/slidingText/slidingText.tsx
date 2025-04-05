@@ -27,7 +27,7 @@ styles,reverse,slideColor,xPercent }:SlidingTextProps ): React.JSX.Element => {
 
     // Transform scroll progress to x position, scale, opacity, and tilt effect
     const x = useTransform(scrollYProgress, [0,xPercent ? xPercent : 0.7], [!reverse ? 350 : -350, 0]); // Adjust slide-in distance
-    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.55], [0, 0, 1]);
+    const opacity = useTransform(scrollYProgress, [0,xPercent ? xPercent - 0.15 : 0.55], [0,  1]);
 
     // Add drag/tilt effect (rotate on both X and Y axis based on scroll progress)
     const rotateX = useTransform(scrollYProgress, [0, 1], [5, -5]); // Tilt effect (rotation along X axis)

@@ -76,3 +76,8 @@ export type { LandingPage1Props } from './pages/landingPage1/landingPage1'
 export {default as LandingPage2} from './pages/landingPage2/landingPage2'
 export type { LandingPage2Props} from './pages/landingPage2/landingPage2'
 
+export {default as TiltingContent} from './components/contentPieces/tiltingContent/tiltingContent'
+export type{ TiltingContentProps} from './components/contentPieces/tiltingContent/tiltingContent'
+
+export {default as ServicePage1} from './pages/servicePage1/servicePage1'
+export type{ ServicePage1Props} from './pages/servicePage1/servicePage1'

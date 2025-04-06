@@ -31,7 +31,7 @@ const ServicePage1 = ({heroContent,
     return (
         <>
         <main className={`w-screen ${textColor}
-        ${bgColor}`}>
+        ${bgColor} space-y-24`}>
             <ThreeBoxHero
             {...heroContent}
             />

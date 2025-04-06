@@ -21,6 +21,7 @@ export interface ThreeBoxHeroProps {
   boxBgColor: string;
   button1?: React.ReactNode;
   button2?: React.ReactNode;
+  textColor?:string
 }
 
 const ThreeBoxHero = ({
@@ -33,7 +34,8 @@ const ThreeBoxHero = ({
   gradient,
   boxBgColor,
   button1,
-  button2
+  button2,
+  textColor
 }: ThreeBoxHeroProps): React.JSX.Element => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -112,6 +114,8 @@ const ThreeBoxHero = ({
     },
   };
 
+  //bg-gradient-to-b from-white to-gray-200 bg-clip-text text-transparent
+
   const renderBoxes = useMemo(
     () =>
       boxData.map((box, index) => (
@@ -124,10 +128,10 @@ const ThreeBoxHero = ({
           whileHover="hover"
           className={`border border-gray-200 rounded-xl w-[75vw] mx-auto py-4 mb-8 md:mr-3 ${boxBgColor}`}
         >
-          <h2 className="text-left ml-8 text-xl font-semibold bg-gradient-to-b from-gray-300 to-gray-200 bg-clip-text text-transparent">
+          <h2 className="text-left ml-8 text-xl ">
             {box.title}
           </h2>
-          <p className="ml-8 text-left mt-4 text-gray-300">{box.description}</p>
+          <p className="ml-8 text-left mt-4 ">{box.description}</p>
         </motion.div>
       )),
     [boxData, boxBgColor, isInView]
@@ -139,18 +143,19 @@ const ThreeBoxHero = ({
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className={`w-screen md:h-screen flex justify-center items-center flex-col ${bgColor ? bgColor : ""}`}
+      className={`w-screen md:h-screen flex justify-center items-center flex-col ${bgColor ? bgColor : ""}
+      ${textColor ? `${textColor}` : ''}`}
       style={backgroundStyle}
     >
       <motion.h1
         variants={textVariants}
-        className="text-sm px-4 sm:text-md mb-4 mt-8 sm:text-md md:text-lg font-semibold text-center mb-4 animate-gradient"
+        className="text-sm px-4 sm:text-md mb-4 mt-8 sm:text-md md:text-lg font-semibold text-center mb-4 "
       >
         {h1}
       </motion.h1>
       <motion.h2
         variants={textVariants}
-        className="text-4xl px-4 mb-4 mt-3 sm:text-5xl md:text-6xl font-semibold bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent text-center"
+        className="text-4xl px-4 mb-4 mt-3 sm:text-5xl md:text-6xl font-semibold  text-center"
       >
         {h2}
       </motion.h2>

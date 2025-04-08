@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect } from "react";
 import {motion, useInView} from 'framer-motion'
 
 import Image from "next/image";
-import Link from "next/link";
+
 
 interface ListAspects {
   
@@ -78,9 +78,9 @@ descriptionTextColor
         initial='initial'
         animate={(!isMobile && parentInView) || inView ? 'animate' : 'initial'}
         className="bg-button-color rounded-3xl overflow-hidden 
-        border border-black border-2 text-white">
+        border border-black border-2">
         <button
-          className={`w-full flex justify-between items-center text-left text-white p-4 font-semibold ${titleBgColor ? `${titleBgColor}` : ''} rounded-t-lg focus:outline-none`}
+          className={`w-full flex justify-between items-center text-left p-4 font-semibold ${titleBgColor ? `${titleBgColor}` : ''} rounded-t-lg focus:outline-none`}
           onClick={() => handleClick(index)}
         >
           <span className={`${titleColor ? `${titleColor}` : ''}`}>{title}</span>
@@ -98,7 +98,7 @@ descriptionTextColor
           </span>
         </button>
         <div
-          className={`transition-all  text-white duration-500  ease-in-out ${descriptionBgColor ? `${descriptionBgColor}` : ''} overflow-hidden ${
+          className={`transition-all  duration-500  ease-in-out ${descriptionBgColor ? `${descriptionBgColor}` : ''} overflow-hidden ${
             isSelected ? "h-[30vh] lg:h-[30vh]" : "h-0"
           }`}
         >
@@ -117,7 +117,7 @@ export interface TextAndListProps {
     src?:string,
     alt?:string,
     description:string,
-    link?:string,
+    button?:React.ReactNode
     isMobile:boolean,
     bgColor?:string
     listAspects:{
@@ -139,7 +139,7 @@ const TextAndList = ({
     subTitle,
     src,
     alt,
-    link,
+   button,
     isMobile,
     bgColor,
     titleColor,
@@ -189,14 +189,14 @@ const TextAndList = ({
 
         <section ref={ref}
         className="flex flex-col md:flex-row
-         text-black md:w-[90vw] overflow-x-hidden
+    md:w-[90vw] overflow-x-hidden
         mx-auto">
           {/* Top Section */}
           <section className="flex flex-col justify-center items-center
           space-y-4 p-4
           mb-auto text-center">
-            <h3 className="text-lg font-semibold text-white">{subTitle}</h3>
-            <h2 className="text-3xl font-bold text-white
+            <h3 className="text-lg font-semibold ">{subTitle}</h3>
+            <h2 className="text-3xl font-bold
             text-center font-cursive">{title}</h2>
             {src && alt && (
               <Image
@@ -208,19 +208,11 @@ const TextAndList = ({
                 max-w-[668px] mx-auto object-cover"
               />
             )}
-            <p className="text-white
+            <p className="
             md:text-left">{description}</p>
-            {link && (
-<>
-              <Link
-              href={link}>
-
-              
-            <button className="p-3 rounded-2xl
-            bg-[#00bfff] text-black">
-                Contact
-            </button>
-            </Link>
+            {button && (
+            <>
+            {button}
             </>
                        )}
           </section>

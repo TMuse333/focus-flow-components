@@ -1,8 +1,13 @@
 import "./index.css";
+
 export {default as ExperienceCard} from './components/contentPieces/experienceCard/experienceCard'
+export type {ExperienceCardProps} from './components/contentPieces/experienceCard/experienceCard'
+
 export {default as ImageTextBox } from './components/contentPieces/imageTextBox/imageTextBox'
+export type {ImageTextBoxProps } from './components/contentPieces/imageTextBox/imageTextBox'
 
 export {default as ImageAspects} from './components/textComponents/imageAspects/imageAspects'
+export type { ImageAspectProps} from './components/textComponents/imageAspects/imageAspects'
 
 export {default as TextAndList} from './components/textComponents/textAndList/textAndList'
 export type { TextAndListProps } from "./components/textComponents/textAndList/textAndList";
@@ -70,14 +75,20 @@ export type {PriceCardsProps} from './components/solutionPieces/priceCards/price
 export {default as GoogleReviews} from './components/carousels/googleReviews/googleReviews'
 export type { GoogleReviewsProps} from './components/carousels/googleReviews/googleReviews'
 
-export {default as LandingPage1} from './pages/landingPage1/landingPage1'
-export type { LandingPage1Props } from './pages/landingPage1/landingPage1'
+export {default as LandingPage1} from './pages/landingPages/landingPage1/landingPage1'
+export type { LandingPage1Props } from './pages/landingPages/landingPage1/landingPage1'
 
-export {default as LandingPage2} from './pages/landingPage2/landingPage2'
-export type { LandingPage2Props} from './pages/landingPage2/landingPage2'
+export {default as LandingPage2} from './pages/landingPages/landingPage2/landingPage2'
+export type { LandingPage2Props} from './pages/landingPages/landingPage2/landingPage2'
 
 export {default as TiltingContent} from './components/contentPieces/tiltingContent/tiltingContent'
 export type{ TiltingContentProps} from './components/contentPieces/tiltingContent/tiltingContent'
 
-export {default as ServicePage1} from './pages/servicePage1/servicePage1'
-export type{ ServicePage1Props} from './pages/servicePage1/servicePage1'
+export {default as ServicePage1} from './pages/servicePages/servicePage1/servicePage1'
+export type{ ServicePage1Props} from './pages/servicePages/servicePage1/servicePage1'
+
+export {default as CircleSteps} from './components/carousels/stepsCarousel/stepsCarousel'
+export type { CircleStepsProps} from './components/carousels/stepsCarousel/stepsCarousel'
+
+export {default as ServicePage2} from './pages/servicePages/servicePage2/servicePage2'
+export type { ServicePage2Props} from './pages/servicePages/servicePage2/servicePage2'

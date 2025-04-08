@@ -1,10 +1,10 @@
 import React from "react";
-import CarouselHero, { CarouselHeroProps } from "../../components/herobanners/carouselHero/carouselHero";
-import CountUpImageText, { CountUpImageTextProps } from "../../components/contentPieces/countUpImageText/countUpImageText";
-import FeatureBoxes, { FeatureBoxProps } from "../../components/textComponents/featureBoxes/featureBoxes";
-import VerticalImageTextBox, { VerticalImageTextBoxProps } from "../../components/contentPieces/verticalImageTextBox/verticalImageTextBox";
-import Testimonials, { TestimonialProps } from "../../components/textComponents/testimonials/testimonials";
-import ExperienceCard, { ExperienceCardProps } from "../../components/contentPieces/experienceCard/experienceCard";
+import CarouselHero, { CarouselHeroProps } from "../../../components/herobanners/carouselHero/carouselHero";
+import CountUpImageText, { CountUpImageTextProps } from "../../../components/contentPieces/countUpImageText/countUpImageText";
+import FeatureBoxes, { FeatureBoxProps } from "../../../components/textComponents/featureBoxes/featureBoxes";
+import VerticalImageTextBox, { VerticalImageTextBoxProps } from "../../../components/contentPieces/verticalImageTextBox/verticalImageTextBox";
+import Testimonials, { TestimonialProps } from "../../../components/textComponents/testimonials/testimonials";
+import ExperienceCard, { ExperienceCardProps } from "../../../components/contentPieces/experienceCard/experienceCard";
 
 // Define the interface for the component props
 export interface LandingPage2Props {

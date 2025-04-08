@@ -113,8 +113,7 @@ export interface TextAndListProps {
     isMobile:boolean,
     bgColor?:string
     listAspects:{
-        src:string,
-        alt:string,
+  
         title:string,
         description:string
     }[]

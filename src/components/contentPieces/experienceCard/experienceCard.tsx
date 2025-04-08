@@ -19,6 +19,7 @@ export interface ExperienceCardProps {
   buttonColor?: string;
   hoverTextColor?: string;
   objectContain?: boolean;
+  textColor?:string
 }
 
 const ExperienceCard = ({
@@ -35,6 +36,7 @@ const ExperienceCard = ({
   buttonColor,
   hoverTextColor,
   objectContain,
+  textColor
 }: ExperienceCardProps): React.JSX.Element => {
   const [startAnimation, setStartAnimation] = useState(false);
   const ref = useRef(null);
@@ -127,7 +129,8 @@ const ExperienceCard = ({
     <motion.section
       ref={ref}
       style={{ scale }}
-      className={`relative mx-auto w-[98vw] rounded-2xl my-8 max-w-[1200px] overflow-x-hidden ${bgColor ? bgColor : ""}`}
+      className={`relative mx-auto w-[98vw] rounded-2xl my-8 max-w-[1200px] overflow-x-hidden ${bgColor ? bgColor : ""}
+      ${textColor ? `${textColor}` : ''}`}
     >
       <h2
         ref={headerRef}

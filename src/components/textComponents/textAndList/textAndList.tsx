@@ -128,7 +128,8 @@ export interface TextAndListProps {
     titleColor:string,
     titleBgColor:string,
     descriptionBgColor:string,
-    descriptionTextColor:string
+    descriptionTextColor:string,
+    textColor?:string
 }
 
 
@@ -143,6 +144,10 @@ const TextAndList = ({
     isMobile,
     bgColor,
     titleColor,
+    titleBgColor,
+    descriptionBgColor,
+    descriptionTextColor,
+    textColor
     
   }: TextAndListProps): React.JSX.Element => {
   
@@ -192,9 +197,9 @@ const TextAndList = ({
     md:w-[90vw] overflow-x-hidden
         mx-auto">
           {/* Top Section */}
-          <section className="flex flex-col justify-center items-center
-          space-y-4 p-4
-          mb-auto text-center">
+          <section className={`flex flex-col justify-center items-center
+          space-y-4 p-4 ${textColor ? `${textColor}` : ''}
+          mb-auto text-center`}>
             <h3 className="text-lg font-semibold ">{subTitle}</h3>
             <h2 className="text-3xl font-bold
             text-center font-cursive">{title}</h2>
@@ -233,6 +238,9 @@ const TextAndList = ({
                 parentInView={inView}
                 isMobile={isMobile}
                 titleColor={titleColor}
+                descriptionBgColor={descriptionBgColor}
+                descriptionTextColor={descriptionTextColor}
+                titleBgColor={titleBgColor}
                 />
               ))}
             </div>

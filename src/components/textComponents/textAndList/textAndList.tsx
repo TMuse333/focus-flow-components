@@ -77,7 +77,7 @@ descriptionTextColor
         variants={slideInVariants(index * 0.15)}
         initial='initial'
         animate={(!isMobile && parentInView) || inView ? 'animate' : 'initial'}
-        className="bg-button-color rounded-3xl overflow-hidden 
+        className=" rounded-3xl overflow-hidden 
         border border-black border-2">
         <button
           className={`w-full flex justify-between items-center text-left p-4 font-semibold ${titleBgColor ? `${titleBgColor}` : ''} rounded-t-lg focus:outline-none`}

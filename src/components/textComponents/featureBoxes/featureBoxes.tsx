@@ -115,7 +115,7 @@ const FeatureBoxes = ({
 
 
     return (
-        <section className={`md:h-screen w-screen
+        <section className={` w-screen
         ${bgColor ? `${bgColor}` : ''}`}>
         {/* <AppearingGradient
   text={title}

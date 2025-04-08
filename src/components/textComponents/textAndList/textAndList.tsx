@@ -15,7 +15,11 @@ interface ListAspects {
     isSelected:boolean,
     setExpandedIndex:React.Dispatch<React.SetStateAction<number | null>>;
     parentInView:boolean,
-    isMobile:boolean
+    isMobile:boolean,
+    titleColor?:string,
+    titleBgColor?:string,
+    descriptionBgColor?:string,
+    descriptionTextColor?:string
 }
 
 
@@ -23,7 +27,11 @@ const ListElement:React.FC<ListAspects> = ({
 title,description,index,
 isSelected, setExpandedIndex,
 parentInView,
-isMobile
+isMobile,
+titleColor,
+titleBgColor,
+descriptionBgColor,
+descriptionTextColor
 }) => {
 
     const handleClick = (index:number) => {
@@ -72,10 +80,10 @@ isMobile
         className="bg-button-color rounded-3xl overflow-hidden 
         border border-black border-2 text-white">
         <button
-          className="w-full flex justify-between items-center text-left text-white p-4 font-semibold bg-[#3B6D74] rounded-t-lg focus:outline-none"
+          className={`w-full flex justify-between items-center text-left text-white p-4 font-semibold ${titleBgColor ? `${titleBgColor}` : ''} rounded-t-lg focus:outline-none`}
           onClick={() => handleClick(index)}
         >
-          <span className="">{title}</span>
+          <span className={`${titleColor ? `${titleColor}` : ''}`}>{title}</span>
           <span>
             {isSelected ? (
                 <>
@@ -90,12 +98,12 @@ isMobile
           </span>
         </button>
         <div
-          className={`transition-all  text-white duration-500  ease-in-out bg-gray-300 overflow-hidden ${
+          className={`transition-all  text-white duration-500  ease-in-out ${descriptionBgColor ? `${descriptionBgColor}` : ''} overflow-hidden ${
             isSelected ? "h-[30vh] lg:h-[30vh]" : "h-0"
           }`}
         >
           <div className="p-4">
-            <p className="text-black">{description}</p>
+            <p className={`${descriptionTextColor ? `${descriptionTextColor}` : ''}`}>{description}</p>
           </div>
         </div>
       </motion.div>
@@ -116,7 +124,11 @@ export interface TextAndListProps {
   
         title:string,
         description:string
-    }[]
+    }[],
+    titleColor:string,
+    titleBgColor:string,
+    descriptionBgColor:string,
+    descriptionTextColor:string
 }
 
 
@@ -129,7 +141,9 @@ const TextAndList = ({
     alt,
     link,
     isMobile,
-    bgColor
+    bgColor,
+    titleColor,
+    
   }: TextAndListProps): React.JSX.Element => {
   
 
@@ -226,6 +240,7 @@ const TextAndList = ({
                 setExpandedIndex={setExpandedIndex}
                 parentInView={inView}
                 isMobile={isMobile}
+                titleColor={titleColor}
                 />
               ))}
             </div>

@@ -80,8 +80,10 @@ const TiltingContent = ({
                 transition: "transform 0.2s ease-out"
             }}
         >
-                <section className="flex flex-col md:flex-row
-                justify-center items-center md:h-[60vh]">
+                <section className={`flex flex-col 
+                w-full
+                ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'}
+                justify-center items-center md:h-[60vh]`}>
 
                 
                 <div className={`flex flex-col justify-center

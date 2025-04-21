@@ -126,7 +126,7 @@ const ThreeBoxHero = ({
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           whileHover="hover"
-          className={`border border-gray-200 rounded-xl w-[75vw] mx-auto py-4 mb-8 md:mr-3 ${boxBgColor}`}
+          className={`border border-gray-200 rounded-xl w-[75vw] md:max-w-[250px] mx-auto py-4 mb-8 md:mr-3 ${boxBgColor}`}
         >
           <h2 className="text-left ml-8 text-xl ">
             {box.title}

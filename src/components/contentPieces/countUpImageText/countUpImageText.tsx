@@ -18,8 +18,10 @@ export interface CountUpImageTextProps {
     maxWidth?:string
     stats:{
         number:string,
-        name:string
+        name:string,
+        description?:string
     }[]
+    textColor?:string
 }
 
 
@@ -35,7 +37,8 @@ const CountUpImageText = ({
     height,
     width,
     maxHeight,
-    maxWidth
+    maxWidth,
+    textColor
 }: CountUpImageTextProps): React.JSX.Element => {
     // Component logic here
 
@@ -101,7 +104,7 @@ const CountUpImageText = ({
           }}
           ref={ref}
           className={`flex flex-col bg-gray-300 mt-12 w-[97vw] rounded-2xl overflow-hidden md:flex-row-reverse mx-auto max-w-[1200px]
-          ${bgColor ? `${bgColor}` : ''}`}
+          ${bgColor ? `${bgColor}` : ''} ${textColor ? `${textColor}` : ''}`}
         >
           {/* Title */}
           <motion.h2
@@ -182,6 +185,9 @@ const CountUpImageText = ({
                           duration={2}
                           className="mr-auto sm:text-2xl"
                         />
+                        {stat.description && (
+                          <span>&nbsp;{stat.description}</span>
+                        )}
                       </motion.p>
 
                       <motion.p 

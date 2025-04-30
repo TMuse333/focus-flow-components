@@ -8,7 +8,8 @@ interface BoxProps {
     alt:string,
     title:string,
     description:string
-    boxColor:string
+    boxColor:string,
+    boxTextColor
 
 }
 
@@ -25,6 +26,8 @@ export interface FeatureBoxProps {
     boxColor:string,
     bgColor?:string,
     titleSlideColor?:string
+    textColor?:string,
+    boxTextColor?:string
 }
 
 
@@ -34,6 +37,7 @@ const FeatureBox: React.FC<BoxProps> = ({
     title,
     description,
     boxColor,
+    boxTextColor
   }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 1 });

@@ -106,7 +106,8 @@ const CountUpImageText = ({
           }}
           ref={ref}
           className={`flex flex-col  mt-12 w-[97vw] rounded-2xl overflow-hidden md:flex-row-reverse mx-auto max-w-[1200px]
-          ${bgColor ? `${bgColor}` : ''} ${textColor ? `${textColor}` : ''}`}
+          ${bgColor ? `${bgColor}` : ''}
+           ${textColor ? `${textColor}` : ''}`}
         >
           {/* Title */}
           <motion.h2

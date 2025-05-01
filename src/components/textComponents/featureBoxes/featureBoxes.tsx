@@ -27,7 +27,7 @@ export interface FeatureBoxProps {
     bgColor?:string,
     titleSlideColor?:string
     textColor?:string,
-    boxTextColor?:string
+    boxTextColor:string
 }
 
 

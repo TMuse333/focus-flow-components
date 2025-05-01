@@ -22,6 +22,7 @@ export interface CountUpImageTextProps {
         description?:string
     }[]
     textColor?:string
+    button?:React.ReactNode
 }
 
 
@@ -38,7 +39,8 @@ const CountUpImageText = ({
     width,
     maxHeight,
     maxWidth,
-    textColor
+    textColor,
+    button
 }: CountUpImageTextProps): React.JSX.Element => {
     // Component logic here
 
@@ -201,11 +203,13 @@ const CountUpImageText = ({
                     </div>
                   );
                 })}
-                <button className="bg-blue-500
-                p-3 rounded-2xl p-3">
-                    Ensure success
-                </button>
+             {button && (
+              <>
+                {button}
+                </>
+               )}
               </div>
+              
             </section>
           </section>
 

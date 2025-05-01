@@ -1,28 +1,56 @@
 import { motion } from 'framer-motion';
-import React, {  useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export interface TypeAlongTextProps {
-  text: string; // The text to animate
-//   as?: ElementType; // The HTML tag to render (default: 'p')
-  styles?: string; // Additional CSS classes
-  keywords?: string[]; // Highlighted keywords
-  startAnimation?: boolean; // Control when animation starts
-  setAnimationComplete?: React.Dispatch<React.SetStateAction<boolean>>; // Notify when animation is complete
-  duration?: number; // Optional duration to control animation speed (default: 0.3 seconds)
+  text: string;
+  styles?: string;
+  keywords?: string[];
+  startAnimation?: boolean;
+  setAnimationComplete?: React.Dispatch<React.SetStateAction<boolean>>;
+  duration?: number;
+  highlightColor: string;
 }
 
 const TypeAlongText = ({
-    text,
-    // as: Tag = "p", // Default to 'p' tag
-    styles = "",
-    keywords = [],
-    startAnimation = false, // Default to false if not provided
-    setAnimationComplete, // Optional function to notify when animation is complete
-    duration = 0.3,
-  }: TypeAlongTextProps): React.JSX.Element => {
+  text,
+  styles = '',
+  keywords = [],
+  startAnimation = false,
+  setAnimationComplete,
+  duration = 0.3,
+  highlightColor,
+}: TypeAlongTextProps): React.JSX.Element => {
   const [highlightComplete, setHighlightComplete] = useState(false);
   const [animationStarted, setAnimationStarted] = useState(false);
 
+  // Helper functions to generate lighter and darker colors
+  const hexToRgb = (hex: string): [number, number, number] => {
+    const cleanedHex = hex.replace('#', '');
+    const r = parseInt(cleanedHex.substring(0, 2), 16);
+    const g = parseInt(cleanedHex.substring(2, 4), 16);
+    const b = parseInt(cleanedHex.substring(4, 6), 16);
+    return [r, g, b];
+  };
+
+  const rgbToHex = (r: number, g: number, b: number): string => {
+    const toHex = (n: number) => {
+      const hex = Math.max(0, Math.min(255, n)).toString(16);
+      return hex.length === 1 ? '0' + hex : hex;
+    };
+    return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+  };
+
+  const adjustColor = (hex: string, factor: number): string => {
+    const [r, g, b] = hexToRgb(hex);
+    const adjustedR = Math.round(r * factor);
+    const adjustedG = Math.round(g * factor);
+    const adjustedB = Math.round(b * factor);
+    return rgbToHex(adjustedR, adjustedG, adjustedB);
+  };
+
+  // Generate lighter and darker shades
+  const lighterColor = adjustColor(highlightColor, 1.2); // 20% lighter
+  const darkerColor = adjustColor(highlightColor, 0.8); // 20% darker
 
   // Trigger animation when startAnimation is set to true
   useEffect(() => {
@@ -33,17 +61,14 @@ const TypeAlongText = ({
     }
   }, [startAnimation, animationStarted]);
 
-  // Set a timeout to mark when the initial animation completes
-
-
   // Function to check if a segment is a keyword
   const isKeyword = (segment: string) => keywords.includes(segment);
 
   // Notify when animation is complete
   const handleAnimationComplete = () => {
-    setHighlightComplete(true)
+    setHighlightComplete(true);
     if (setAnimationComplete) {
-      setAnimationComplete(true); // Notify parent that the animation is complete
+      setAnimationComplete(true);
     }
   };
 
@@ -51,35 +76,29 @@ const TypeAlongText = ({
   let charIndexCounter = 0;
 
   return (
-    <h2 className={` ${styles}`}>
+    <h2 className={`${styles}`}>
       {text.split(' ').map((word, wordIndex) => (
-        <span key={wordIndex}> {/* Add spacing between words */}
+        <span key={wordIndex}>
           {word.split('').map((char, charIndex) => {
-            const cumulativeDelay = charIndexCounter * 0.05; // Cumulative delay for each character
+            const cumulativeDelay = charIndexCounter * 0.05;
+            charIndexCounter++;
 
-            charIndexCounter++; // Increment index counter for each character
-
-            // Check if this is the last character of the entire string
-            const isLastCharacter =
-              charIndexCounter === text.replace(/\s/g, '').length; // Remove spaces for accurate character count
+            const isLastCharacter = charIndexCounter === text.replace(/\s/g, '').length;
 
             return (
               <motion.span
                 key={`${wordIndex}-${charIndex}`}
                 initial={{ y: -20, opacity: 0 }}
-                animate={startAnimation && startAnimation ?{ y: 0, opacity: 1 }:
-            {}}
+                animate={startAnimation ? { y: 0, opacity: 1 } : {}}
                 transition={{
-                  delay: cumulativeDelay, // Cumulative delay for the character
-                  duration, // Use the `duration` prop for the animation duration
+                  delay: cumulativeDelay,
+                  duration,
                 }}
-                className={` ${
-                  highlightComplete && isKeyword(word) ? 'animate-gradient' : ''
-                }`}
+                className={`${highlightComplete && isKeyword(word) ? 'animate-gradient' : ''}`}
                 style={
                   highlightComplete && isKeyword(word)
                     ? {
-                        background: 'linear-gradient(90deg, #00bfff, #00A7E0, #64D8FF)',
+                        background: `linear-gradient(90deg, ${highlightColor}, ${darkerColor}, ${lighterColor})`,
                         backgroundSize: '200% 200%',
                         backgroundClip: 'text',
                         WebkitBackgroundClip: 'text',
@@ -103,12 +122,13 @@ const TypeAlongText = ({
                     ease: 'easeInOut',
                   },
                 }}
-                onAnimationComplete={isLastCharacter ? handleAnimationComplete : undefined} // Call only for the last character
+                onAnimationComplete={isLastCharacter ? handleAnimationComplete : undefined}
               >
                 {char}
               </motion.span>
             );
           })}
+          <span> </span>
         </span>
       ))}
     </h2>

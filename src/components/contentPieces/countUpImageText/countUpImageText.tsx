@@ -103,7 +103,7 @@ const CountUpImageText = ({
             scale
           }}
           ref={ref}
-          className={`flex flex-col bg-gray-300 mt-12 w-[97vw] rounded-2xl overflow-hidden md:flex-row-reverse mx-auto max-w-[1200px]
+          className={`flex flex-col  mt-12 w-[97vw] rounded-2xl overflow-hidden md:flex-row-reverse mx-auto max-w-[1200px]
           ${bgColor ? `${bgColor}` : ''} ${textColor ? `${textColor}` : ''}`}
         >
           {/* Title */}
@@ -111,7 +111,8 @@ const CountUpImageText = ({
             variants={fadeInVariants(0)}
             initial="initial"
             animate={inView ? "animate" : "initial"}
-            className="mx-auto text-3xl  font-bold text-center sm:text-4xl md:text-5xl mt-12 mb-4 md:hidden"
+            className="mx-auto text-3xl  font-bold text-center sm:text-4xl md:text-5xl mt-12 mb-4 md:hidden
+            text-left"
           >
             {title}
           </motion.h2>

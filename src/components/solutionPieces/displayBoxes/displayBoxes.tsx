@@ -13,12 +13,14 @@ interface ElementProps {
     destination:string,
     buttonColor:string,
     buttonHover:string
+   
     
 }
 
 const Element:React.FC<ElementProps> = ({
     title,src,alt,description,buttonText,
-    destination,buttonColor,buttonHover
+    destination,buttonColor,buttonHover,
+    
 }) => {
 
     return (
@@ -55,7 +57,7 @@ export interface DisplayBoxProps {
     boxColor:string,
     glowColor?:string,
     hoverColor:string,
-
+    boxTextColor?:string
     
     
 
@@ -63,6 +65,7 @@ export interface DisplayBoxProps {
 
     const DisplayBoxes = ({
         data,bgColor,boxColor,hoverColor,glowColor,
+        boxTextColor
         
     }:DisplayBoxProps) : React.JSX.Element => {
 
@@ -83,7 +86,7 @@ export interface DisplayBoxProps {
                   <div 
                   key={index}
                   className={`w-[90vw] mx-auto flex mt-2 p-4 rounded-2xl flex-col justify-center 
-                  items-center relative mb-4 ${glowColor} hover:scale-[1.05]
+                  items-center relative mb-4 ${glowColor} hover:scale-[1.05] ${boxTextColor ? `${boxTextColor}` : ''}
                   ${boxColor} sm:w-[45vw] max-w-[500px] mb-8 group transition-all duration-300
                   ${hoverColor}`}>
                 

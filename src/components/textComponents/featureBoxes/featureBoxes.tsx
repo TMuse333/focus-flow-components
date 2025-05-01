@@ -9,7 +9,7 @@ interface BoxProps {
     title:string,
     description:string
     boxColor:string,
-    boxTextColor
+    boxTextColor?:string
 
 }
 
@@ -75,7 +75,8 @@ const FeatureBox: React.FC<BoxProps> = ({
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className={`w-[90vw] mx-auto p-4 mb-8 border border-black rounded-xl sm:w-[40vw] ${boxColor} max-w-[550px]`}
+        className={`w-[90vw] mx-auto p-4 mb-8 border border-black rounded-xl sm:w-[40vw] ${boxColor} max-w-[550px]
+        ${boxTextColor ? `${boxTextColor}` : ''}`}
       >
        <motion.div
         variants={childVariants}
@@ -113,7 +114,8 @@ const FeatureBox: React.FC<BoxProps> = ({
 
 const FeatureBoxes = ({
     boxData, title, description,
-    boxColor, bgColor,titleSlideColor
+    boxColor, bgColor,titleSlideColor,
+    boxTextColor, textColor
 
 }:FeatureBoxProps):React.JSX.Element => {
 
@@ -154,6 +156,7 @@ slideColor={titleSlideColor ? titleSlideColor : ''}
                 {...box}
                 key={index}
                 boxColor={boxColor}
+              boxTextColor={boxTextColor}
                 />
 
             ))}

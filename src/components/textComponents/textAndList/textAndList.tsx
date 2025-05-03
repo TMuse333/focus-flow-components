@@ -20,6 +20,7 @@ interface ListAspects {
     titleBgColor?:string,
     descriptionBgColor?:string,
     descriptionTextColor?:string
+
 }
 
 
@@ -31,7 +32,8 @@ isMobile,
 titleColor,
 titleBgColor,
 descriptionBgColor,
-descriptionTextColor
+descriptionTextColor,
+
 }) => {
 
     const handleClick = (index:number) => {
@@ -130,6 +132,7 @@ export interface TextAndListProps {
     descriptionBgColor:string,
     descriptionTextColor:string,
     textColor?:string
+    objectContain?:boolean
 }
 
 
@@ -147,7 +150,8 @@ const TextAndList = ({
     titleBgColor,
     descriptionBgColor,
     descriptionTextColor,
-    textColor
+    textColor,
+    objectContain
     
   }: TextAndListProps): React.JSX.Element => {
   
@@ -209,8 +213,8 @@ const TextAndList = ({
               height={1300}
                 src={src}
                 alt={alt}
-                className="rounded-xl relative md:w-[50vw] w-[90vw] h-[80vh] md:h-[45vw] max-h-[467px]
-                max-w-[668px] mx-auto object-cover"
+                className={`rounded-xl relative md:w-[50vw] w-[90vw] h-[80vh] md:h-[45vw] max-h-[467px]
+                max-w-[668px] mx-auto ${objectContain ? 'object-contain' : 'object-cover'}`}
               />
             )}
             <p className="

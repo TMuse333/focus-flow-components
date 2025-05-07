@@ -22,7 +22,8 @@ export interface ThreeBoxHeroProps {
   button1?: React.ReactNode;
   button2?: React.ReactNode;
   textColor?:string,
-  boxTextColor?:string
+  boxTextColor?:string,
+
 }
 
 const ThreeBoxHero = ({
@@ -129,7 +130,7 @@ const ThreeBoxHero = ({
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           whileHover="hover"
-          className={`border border-gray-200 rounded-xl w-[75vw] md:w-[25vw] max-w-[400px] mx-auto py-4 mb-8 md:mr-3 ${boxBgColor}
+          className={`border border-gray-200 rounded-xl w-[75vw] md:w-[30vw] max-w-[500px] mx-auto py-4 mb-8 md:mr-3 ${boxBgColor}
           ${boxTextColor ? `${boxTextColor}` : ''}`}
         >
           <h2 className="text-left ml-8 text-xl ">

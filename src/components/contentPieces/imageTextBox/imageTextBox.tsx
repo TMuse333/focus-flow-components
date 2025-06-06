@@ -17,7 +17,8 @@ export interface ImageTextBoxProps {
   customImage?: React.ReactNode
   objectContain?:boolean,
   isMobile:boolean,
-  button?:React.ReactNode
+  button?:React.ReactNode,
+  textColor?:string
 
 }
 
@@ -31,7 +32,8 @@ const ImageTextBox = ({
     customImage,
     objectContain,
     isMobile,
-    button
+    button,
+    textColor
   }: ImageTextBoxProps): React.JSX.Element => {
   
 
@@ -91,8 +93,8 @@ const imageFadeIn = (delay:number) => {
       variants={fadeIn(0)}
       initial='initial'
       animate={headerInView  ? 'animate' : 'initial'}
-       className=" text-center text-4xl relative z-[2] md:hidden
-       font-cursive">
+       className={`text-center text-4xl relative z-[2] md:hidden
+       font-cursive ${textColor ? `${textColor}` : ''}`} >
         {title}
       </motion.h2>
   
@@ -101,6 +103,7 @@ const imageFadeIn = (delay:number) => {
         reverse ? "md:flex-row-reverse" : "md:flex-row"
 
       } ${bgColor ? `${bgColor}` : ''}
+      ${textColor ? `${textColor}` : ''}
       `}
     >
      

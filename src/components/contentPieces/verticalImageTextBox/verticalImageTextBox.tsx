@@ -127,7 +127,7 @@ export interface VerticalImageTextBoxProps {
     
     return (
       <section ref={scope} className=" relative
-      py-8
+      py-8 min-h-screen
      "
      style={{
       backgroundImage:bgImage ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${bgImage})` : undefined,
@@ -153,7 +153,17 @@ export interface VerticalImageTextBoxProps {
           
             Time to elevate your digital presence
           </h3> */}
-  
+   {logo && (
+             <Image
+             width={600}
+             height={1300}
+             src={logo}
+             alt="brain"
+             className="w-[40vw] object-contain mx-auto relative z-[4]
+             max-w-[420px] max-h-[280px] mt-[-3rem] mb-4
+             "
+           />
+        )}
           <AppearingGradient
           text={title}
           subText={subTitle ? subTitle : ""}
@@ -170,17 +180,7 @@ export interface VerticalImageTextBoxProps {
        
   
         {/* Optional image */}
-        {logo && (
-             <Image
-             width={600}
-             height={1300}
-             src={logo}
-             alt="brain"
-             className="w-[40vw] object-contain mx-auto relative z-[4]
-             max-w-[420px] max-h-[280px] mt-[-3rem] mb-4
-             "
-           />
-        )}
+       
        
   
         {/* Call to action section */}

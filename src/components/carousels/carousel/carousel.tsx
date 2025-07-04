@@ -17,7 +17,7 @@ export interface CarouselProps {
   }[];
   hasDescription?: boolean;
   bgColor?:string
-
+  textColor?:string
   button?:{
     buttonColor:string,
     buttonHoverColor:string,
@@ -26,7 +26,7 @@ export interface CarouselProps {
 }
 
 const Carousel = ({ images, hasDescription,
-button,bgColor }:CarouselProps) : React.JSX.Element => {
+button,bgColor,textColor }:CarouselProps) : React.JSX.Element => {
   const [shift, setShift] = useState<number>(0);
   const [currentImage, setCurrentImage] = useState<number>(0);
   const [leftClicked, setLeftClicked] = useState<boolean>(false);
@@ -147,7 +147,8 @@ button,bgColor }:CarouselProps) : React.JSX.Element => {
           flex flex-col   ml-auto mr-auto
           justify-center items-center md:flex-row 
           rounded-2xl ${bgColor ? `${bgColor}` : ''}
-          mb-5 ${!carouselClicked || hasDescription ? 'max-w-[1300px]  relative' : 'bg-black h-screen fixed top-0 left-0 z-[95]'}`}
+          mb-5 ${!carouselClicked || hasDescription ? 'max-w-[1300px]  relative' : 'bg-black h-screen fixed top-0 left-0 z-[95]'}
+          ${textColor ? `${textColor}` : ''}`}
           
       >
         <div

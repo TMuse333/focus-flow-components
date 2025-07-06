@@ -1,7 +1,7 @@
 "use client"
 
 import  { ReactNode, useRef, useEffect, useState } from "react";
-import { motion, useScroll, useTransform, motionValue,
+import { motion, useScroll, useTransform, useMotionValue,
 useInView} from "framer-motion";
 import Link from "next/link";
 // import { FiArrowUpRight } from "react-icons/fi";
@@ -391,7 +391,7 @@ const StickyImage = ({ imgUrl, isVideo, alt,muted,thumbnail,textYPosition }: { i
 
   // const {textYPosition} = useGeneralContext()
 
-  const motionTextYPosition = motionValue(textYPosition);
+  const motionTextYPosition = useMotionValue(textYPosition);
 
   const brightness = useTransform(
     motionTextYPosition,

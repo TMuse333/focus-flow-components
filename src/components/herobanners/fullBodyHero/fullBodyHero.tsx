@@ -23,6 +23,7 @@ export interface FullBodyHeroProps {
     typeWriterExamples?:string[]
     diagonalColor:string,
     bgColor?:string
+    highlightColor:string //hexColor
   }
   
   const FullBodyHero = ({
@@ -40,7 +41,8 @@ export interface FullBodyHeroProps {
     logoStyles = "",
     typeWriterExamples,
     diagonalColor,
-    bgColor
+    bgColor,
+    highlightColor
   }: FullBodyHeroProps): React.JSX.Element => {
     const [startTypeAlong, setStartTypeAlong] = useState(false);
     const [startImage, setStartImage] = useState(false);
@@ -113,7 +115,7 @@ export interface FullBodyHeroProps {
               </motion.h1>
   
               <TypeAlongText
-               
+               highlightColor={highlightColor}
                 styles="font-semibold
                 relative z-[2]
                 px-3 md:px-0 

@@ -17,6 +17,7 @@ export interface CarouselHeroProps {
   bgColor?:string
   carouselData: CarouselData[];
   button?:React.ReactNode
+  highlightColor:string
 }
 
 const Carousel = ({ carouselData }: { carouselData: CarouselData[] }) => {
@@ -97,7 +98,8 @@ const CarouselHero = ({
     descriptionText,
     carouselData,
     button,
-    bgColor
+    bgColor,
+    highlightColor
   }: CarouselHeroProps): React.JSX.Element => {
   const [startPTag, setStartPTag] = useState(false);
   const [startTypeAlong, setStartTypeAlong] = useState(false);
@@ -133,7 +135,7 @@ const CarouselHero = ({
           text={mainHeader}
           styles="mx-auto py-3 break-words max-w-full px-2 font-semibold whitespace-pre-line
           overflow-wrap text-3xl sm:text-4xl md:text-4xl"
-        
+        highlightColor={highlightColor}
           keywords={["Animated"]}
           setAnimationComplete={setStartPTag}
           startAnimation={startTypeAlong}

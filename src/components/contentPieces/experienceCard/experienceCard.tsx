@@ -64,7 +64,7 @@ const ExperienceCard = ({
     const image = imageRef.current;
     const description = descriptionRef.current;
 
-    if (image && description) {
+    if (image && description && header) {
       animate(header, { opacity: 1 }, { ease: "easeInOut", delay: 0.0 });
       animate(image, { opacity: 1 }, { ease: "easeInOut", delay: 0.2 });
       animate(description, { opacity: 1 }, { ease: "easeInOut", delay: 0.4 });

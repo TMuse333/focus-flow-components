@@ -1,18 +1,16 @@
+"use client"; // Enable client-side rendering for this component
 
-import React, { useMemo } from "react";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import React, { useMemo, useRef } from "react";
+import { motion, useInView, Variants } from "framer-motion";
 
 export interface ThreeBoxHeroProps {
   h1: string;
-
   h2: string;
   pTag: string;
   boxData: {
     title: string;
     description: string;
   }[];
-
   gradient?: {
     color1: string;
     color2: string;
@@ -21,14 +19,12 @@ export interface ThreeBoxHeroProps {
   boxBgColor: string;
   button1?: React.ReactNode;
   button2?: React.ReactNode;
-  textColor?:string,
-  boxTextColor?:string,
-
+  textColor?: string;
+  boxTextColor?: string;
 }
 
 const ThreeBoxHero = ({
   h1,
-
   h2,
   pTag,
   boxData,
@@ -38,10 +34,9 @@ const ThreeBoxHero = ({
   button1,
   button2,
   textColor,
-  boxTextColor
-
+  boxTextColor,
 }: ThreeBoxHeroProps): React.JSX.Element => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const backgroundStyle = useMemo(
@@ -53,7 +48,7 @@ const ThreeBoxHero = ({
   );
 
   // Animation variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -64,26 +59,26 @@ const ThreeBoxHero = ({
     },
   };
 
-  const textVariants = {
+  const textVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 20,
         stiffness: 100,
       },
     },
   };
 
-  const buttonVariants = {
+  const buttonVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         bounce: 0.4,
         duration: 0.8,
       },
@@ -91,34 +86,32 @@ const ThreeBoxHero = ({
     hover: {
       scale: 1.05,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 400,
       },
     },
   };
 
-  const boxVariants = {
+  const boxVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
-        delay: i * 0.8, // Increased delay for clearer sequential effect
+        ease: "easeOut" as const,
+        delay: i * 0.8,
       },
     }),
     hover: {
       scale: 1.02,
       boxShadow: "0px 10px 30px rgba(0,0,0,0.1)",
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 300,
       },
     },
   };
-
-  //bg-gradient-to-b from-white to-gray-200 bg-clip-text text-transparent
 
   const renderBoxes = useMemo(
     () =>
@@ -130,16 +123,19 @@ const ThreeBoxHero = ({
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           whileHover="hover"
-          className={`border border-gray-200 rounded-xl w-[75vw] md:w-[30vw] max-w-[500px] mx-auto py-4 mb-8 md:mr-3 ${boxBgColor}
-          ${boxTextColor ? `${boxTextColor}` : ''}`}
+          className={`border border-gray-200 rounded-xl w-[75vw] md:w-[30vw] max-w-[500px] mx-auto py-4 mb-8 md:mr-3 ${boxBgColor} ${
+            boxTextColor ? boxTextColor : ''
+          }`}
         >
-          <h2 className="text-left ml-8 text-xl ">
+          <h2 className={`text-left ml-8 text-xl ${boxTextColor ? boxTextColor : ''}`}>
             {box.title}
           </h2>
-          <p className="ml-8 text-left mt-4 ">{box.description}</p>
+          <p className={`ml-8 text-left mt-4 ${boxTextColor ? boxTextColor : ''}`}>
+            {box.description}
+          </p>
         </motion.div>
       )),
-    [boxData, boxBgColor, isInView]
+    [boxData, boxBgColor, boxTextColor, isInView]
   );
 
   return (
@@ -148,25 +144,26 @@ const ThreeBoxHero = ({
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className={`w-screen md:h-screen flex justify-center items-center flex-col ${bgColor ? bgColor : ""}
-      ${textColor ? `${textColor}` : ''}`}
+      className={`w-screen md:h-screen flex justify-center items-center flex-col ${bgColor ? bgColor : ""} ${
+        textColor ? textColor : ''
+      }`}
       style={backgroundStyle}
     >
       <motion.h1
         variants={textVariants}
-        className="text-sm px-4 sm:text-md mb-4 mt-8 sm:text-md md:text-lg font-semibold text-center mb-4 "
+        className="text-sm px-4 sm:text-md mb-4 mt-8 md:text-lg font-semibold text-center"
       >
         {h1}
       </motion.h1>
       <motion.h2
         variants={textVariants}
-        className="text-4xl px-4 mb-4 mt-3 sm:text-5xl md:text-6xl font-semibold  text-center"
+        className="text-4xl px-4 mb-4 mt-3 sm:text-5xl md:text-6xl font-semibold text-center"
       >
         {h2}
       </motion.h2>
       <motion.p
         variants={textVariants}
-        className=" w-[80%] mx-auto text-center"
+        className="w-[80%] mx-auto text-center"
       >
         {pTag}
       </motion.p>
@@ -175,17 +172,8 @@ const ThreeBoxHero = ({
         variants={containerVariants}
         className="mt-4 flex justify-center items-center"
       >
-       {button1 && (
-        <>
-        {button1}
-        </>
-       )}
-         {button2 && (
-        <>
-        {button2}
-        </>
-       )}
-
+        {button1 && <>{button1}</>}
+        {button2 && <>{button2}</>}
       </motion.section>
 
       <motion.section

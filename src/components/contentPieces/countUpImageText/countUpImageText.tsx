@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import CountUp from 'react-countup';
-import { motion, useInView, useScroll, useTransform, Variants,easeIn } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform, Variants, } from 'framer-motion';
 
 export interface CountUpImageTextProps {
     src: string;
@@ -52,7 +52,7 @@ const CountUpImageText = ({
     });
 
     // Use a valid easing value for useTransform
-    const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.95, 1, 1, 0.95], { ease: easeIn });
+    const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.95, 1, 1, 0.95], );
 
     const fadeInVariants = (delay: number): Variants => ({
         initial: { opacity: 0, x: -30, y: -20 },

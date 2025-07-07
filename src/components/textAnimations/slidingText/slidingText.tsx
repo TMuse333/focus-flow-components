@@ -59,7 +59,7 @@ styles,reverse,slideColor,xPercent }:SlidingTextProps ): React.JSX.Element => {
                     className={`
                     mt-4 text-center  text-xl sm:text-2xl
                     md:text-3xl
-                    text-black
+                    
                     px-4`}
                 >
                     {subText}

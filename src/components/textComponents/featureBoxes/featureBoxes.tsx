@@ -126,7 +126,8 @@ const FeatureBoxes = ({
       {title && description && (
         <SlidingText
           text={title}
-          styles="text-center mx-auto text-4xl sm:text-5xl md:text-6xl mb-4 text-black"
+          styles={`text-center mx-auto text-4xl sm:text-5xl md:text-6xl mb-4 
+          ${textColor ? textColor : ''} `}
           subText={description}
           slideColor={titleSlideColor ? titleSlideColor : ''}
         />

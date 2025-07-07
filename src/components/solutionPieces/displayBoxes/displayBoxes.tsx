@@ -25,7 +25,7 @@ const Element:React.FC<ElementProps> = ({
 
     return (
        <>
-            <h2 className="text-white text-center
+            <h2 className=" text-center
             text-2xl mb-4 font-semibold">{title}</h2>
             <Image 
             src={src}
@@ -36,10 +36,10 @@ const Element:React.FC<ElementProps> = ({
             max-h-[150px] mx-auto object-contain
             max-w-[200px] bg-gray-300 rounded-2xl'
             />
-            <p className="text-white my-4 font-semibold">{description}</p>
+            <p className=" my-4 font-semibold">{description}</p>
             <button className={`${buttonColor} ${buttonHover}
            
-            p-2 rounded-2xl text-white`}>
+            p-2 rounded-2xl `}>
                 <Link href={destination}>
                     {buttonText}
                 </Link>
@@ -72,7 +72,8 @@ export interface DisplayBoxProps {
 
         return (
             <section className={`w-screen relative
-            ${bgColor ? `${bgColor}` : ''}`}
+            ${bgColor ? `${bgColor}` : ''}
+            ${boxTextColor ? `${boxTextColor}` : ''}`}
             >
 
            
